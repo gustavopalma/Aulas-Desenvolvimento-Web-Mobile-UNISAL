@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title><span class="lecture_placeholder"></title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="css/mine.css">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+
+
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <div id="header-template">
+    <a href="https://unisal.br/">
+      <img src="img/logo_unisal.png" alt="Logo">
+    </a>
+    <h1>Aula &nbsp; <span id="aula_num_placeholder"></span> &nbsp; - &nbsp; <span class="lecture_placeholder"></span>
+      &nbsp; - &nbsp; <span class="lecture_subject_placeholder"></span></h1>
+  </div>
+
+  <!-- Rodapé -->
+  <div id="footer-template">
+    UNISAL - São José, Campinas - &nbsp; <span id="year-placeholder"></span>
+  </div>
+
+  <!-- Slides -->
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <a href="https://unisal.br/">
+          <img src="img/logo_unisal.png" alt="logo unisal"
+            style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+        </a>
+        <h2><span class="lecture_placeholder"></h2>
+        <h3><span class="lecture_subject_placeholder"></span></h3>
+        <p>
+          <small>Prof. Me. Gustavo Ferreira Palma</small>
+        </p>
+      </section>
+
+      <section>
+        <h2>Pauta</h2>
+        <ul>
+          <li>Android <i>Intents</i>;</li>
+          <li>Acesso à Câmera, Captura de Fotos e manipulação do Resultado;</li>
+          <li>Desenvolvimento de Exemplo Prático.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Android <i>Intents</i></h2>
+        <ul>
+          <li>Antes de intedermos o que são as Intents é necessário relembrar algumas características importantes sobre
+            o Android;</li>
+          <li>Diferentemente da maioria dos sistemas operacionais Desktop, as aplicações Android, não acessam o hardware
+            de forma direta através de <i>drivers</i>, ao Invés disso existem duas maneiras viáveis;
+          </li>
+          <ul>
+            <li>Utilizando as APIs disponibilizadas pelo <i>Framework</i>, assumindo o controle dos recursos, através
+              dos diferentes;
+              <i>"Managers"</i>, dos dispositivo, e somente se nenhum outrou app estiver utilizando e sempre como
+              conscentimento do usuário;
+            </li>
+            <li>Ou informando ao Sistema operacional que a aplicação tem a intenção de consumir algum recurso, como a
+              câmera ou mesmo ligar para alguém, através do aplicativo padrão já instalado no telefone</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Android <i>Intents</i></h2>
+        <ul>
+          <li>A comunicação da intenção de uso acontece através de uma <i>Intent</i></li>
+          <li>Após enviada, o <i>framework</i> recebe essa intent, verifica se a aplicação solicitante tem permissão
+            para faze-la, e então procura na lista de aplicações padrão uma aplicação para "resolve-la"</li>
+          <li>Uma Intent pode ou não devolver um resultado para a aplicação que a enviou</li>
+          <li>As intents são um mecanismo eficiente de troca de informações entre aplicações e o sistema oepracional.
+          </li>
+          <li>Vale lembrar que é possível emitir e receber <i>Intent</i> dentro de uma mesma aplicação</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Android <i>Intents</i></h2>
+        <ul>
+          <li>O Fluxo para envio de uma intent para outro aplicação é demonstrado pelo seguinte fluxograma</li>
+        </ul>
+        <pre class="mermaid" style="transform: scale(1.1); transform-origin: center; margin-top: 55px;">
+flowchart LR
+
+    A[Aplicação Android] --> B[Cria uma Intent]
+    B --> C[Android Framework]
+    C --> D[Resolve a Intent]
+
+    subgraph Fluxo
+    direction TB
+
+        E{Existe app capaz<br/>de executar a ação?}
+
+        E -- Sim --> F[Aplicação compatível]
+        E -- Não --> G[Erro]
+
+        F --> H[Executa a tarefa]
+
+        H --> I{Retorna resultado?}
+
+        I -- Sim --> K[Atualiza estado]
+        I -- Não --> J[Sem retorno]
+
+        K --> L[Compose recompõe]
+
+        J --> N[Fim]
+        L --> N
+        G --> N
+    end
+
+    D --> E
+</pre>
+      </section>
+
+      <section>
+        <h2>Acesso à Câmera, Captura de Fotos e manipulação do Resultado</h2>
+        <ul>
+          <li>Todo o acesso, e controle nessa aplicação fica a critério da aplicação padrão de câmera</li>
+          <li>Nenhuma permissão, ou alerta ao usuário precisa ser implementado pela aplicação que enviou a
+            <i>Intent</i>, Todas as questões de privacidade ficam a cargo do aplicativo padrão de câmera
+          </li>
+          <li>A aplicação que fez a requisição só deve receber e processar o retorno da oepração de captura</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Implementando um exemplo prático</h1>
+      </section>
+
+      <section>
+        <h1>OBRIGADO!</h1>
+        <p>Podem me encontrar aqui:</p>
+        <ul>
+          <li>gustavo.palma@unisal.edu.br</li>
+          <li>www.gustavopalma.com.br</li>
+        </ul>
+      </section>
+
+
+    </div>
+  </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="../../../dist/reveal.js"></script>
+
+
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/math/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin/plugin/mermaid/mermaid.js"></script>
+  <script>
+    const iframe = document.getElementById('terminal');
+    if (iframe != null) {
+      iframe.onload = () => {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const style = doc.createElement('style');
+        style.innerHTML = `
+      .xterm {
+        font-size: 20px !important;
+        line-height: 1.2 !important;
+      }
+    `;
+        doc.head.appendChild(style);
+      };
+    }
+  </script>
+  <script>
+    Reveal.on('ready', event => {
+      const headerTemplate = document.getElementById('header-template');
+      const footerTemplate = document.getElementById('footer-template');
+
+      document.querySelectorAll('.slide-background').forEach(backgroundDiv => {
+        if (headerTemplate) {
+          backgroundDiv.appendChild(headerTemplate.cloneNode(true));
+        }
+        if (footerTemplate) {
+          backgroundDiv.appendChild(footerTemplate.cloneNode(true));
+        }
+      });
+
+      const nomeDisciplina = "Desenvolvimento Web e Mobile";
+      const assuntoAula = "Desenvolvimento Web e Mobile - Android - Android Intents e Câmera"
+      const aulaNum = '3';
+      const currentDate = new Date();
+
+      // Get the full four-digit year
+      const currentYear = " " + currentDate.getFullYear(); // e.g., 2026
+
+      // Find the HTML element by its ID and set its text content to the current year
+      document.getElementById('year-placeholder').textContent = "\  " + currentYear;
+      var elems = document.getElementsByClassName('lecture_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = nomeDisciplina;
+      }
+      document.title = nomeDisciplina;
+      document.getElementById('aula_num_placeholder').textContent = aulaNum
+      elems = document.getElementsByClassName('lecture_subject_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = assuntoAula;
+      }
+      createWorldMarketShare();
+      createMarketShare();
+    });
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'slide',
+      center: true,
+      width: "100%",
+      height: "100%",
+      margin: 0,
+      controls: true,
+      controlsBackArrows: 'faded',
+      progress: true,
+      plugins: [RevealHighlight, RevealZoom, RevealMath.MathJax3],
+    });
+  </script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</body>
+
+</html>

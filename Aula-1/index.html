@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title><span class="lecture_placeholder"></title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="css/mine.css">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+
+
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <div id="header-template">
+    <a href="https://unisal.br/">
+      <img src="img/logo_unisal.png" alt="Logo">
+    </a>
+    <h1>Aula &nbsp; <span id="aula_num_placeholder"></span> &nbsp; - &nbsp; <span class="lecture_placeholder"></span>
+      &nbsp; - &nbsp; <span class="lecture_subject_placeholder"></span></h1>
+  </div>
+
+  <!-- Rodapé -->
+  <div id="footer-template">
+    UNISAL - São José, Campinas - &nbsp; <span id="year-placeholder"></span>
+  </div>
+
+  <!-- Slides -->
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <a href="https://unisal.br/">
+          <img src="img/logo_unisal.png" alt="logo unisal"
+            style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+        </a>
+        <h2><span class="lecture_placeholder"></h2>
+        <h3><span class="lecture_subject_placeholder"></span></h3>
+        <p>
+          <small>Prof. Me. Gustavo Ferreira Palma</small>
+        </p>
+      </section>
+
+      <section>
+        <section>
+          <h2>Quem Sou eu?</h2>
+          <h4>Formação Acadêmica</h4>
+          <ul>
+            <li>Técnico em Informática - Etec Waldyr Duron Júnior</li>
+            <li>Tecnólogo em Análise e Desenvolvimento de Sistemas - FATEC Ourinhos</li>
+            <li>Especialista Em Eletrônica Embarcada - UNISAL</li>
+            <li>Mestre em Inteligência Computacional Aplicada - UTFPR</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Experiência Profissional</h4>
+          <ul>
+            <li>Analista de Tecnologia - Chiptronic Eletrônica do Brasil (2011-2019)</li>
+            <li>Professor de Graduação - Eduvale Avaré (2017-2019)</li>
+            <li>Analista de Desenvolvimento - Stoneridge Brasil (2019-2020)</li>
+            <li>Consultor Tecnológico - Instituto de Pesquisas Eldorado (2020)</li>
+            <li>Professor de Graduação e Pós-Graduação - UNISAL (2023)</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <h1>Quem São Vocês?</h1>
+      </section>
+
+      <section>
+        <h2>O que Vamos Estudar?</h2>
+
+        <ul>
+          <li>Desenvolvimento de Aplicaçoes Mobile</li>
+          <ul>
+            <li>Sistemas Operacionais Móveis</li>
+            <li>Kit de Sensores nos dispositivos</li>
+            <li>Câmera</li>
+            <li>Mapas e GPS</li>
+            <li>Conectividade</li>
+          </ul>
+          <li>Desenvolvimento de Aplicações Web</li>
+          <ul>
+            <li>Desenvolvimento Backend utilizando Spring</li>
+            <li>Desenvolvimento de APIs para integração de sistemas</li>
+            <li>Desenvolvimento de arquiteturas de sistemas desacopladoss</li>
+          </ul>
+          <li>Entre outros...</li>
+        </ul>
+      </section>
+
+      <!-- <section>
+        <h2>Bibliografia Básica</h2>
+        <ul>
+          <li>Conci, Aura. Computação Gráfica: Teoria e Prática - Geração De Imagens - Volume 1. Contribuição de Cristina Nader Vasconcelos e Eduardo Azevedo, Alta Books, 2021.</li>
+          <li>Barelli, Felipe. Introdução à visão computacional: uma abordagem prática com Python e OpenCV. Casa do Código, 2018.</li>
+        </ul>
+      </section> -->s
+
+      <section>
+        <section>
+          <h2>Métodos de Avaliação</h2>
+          <ul>
+            <li>Majoritariamente avaliações práticas;</li>
+            <li>Se/Quando Necessário, Avaliação escrita;</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Combinados de Ouro</h2>
+          <ul>
+            <li>Nosso Curso é PRESENCIAL, então para ter presença é preciso estar PRESENTE;</li>
+            <li>Abono de Faltas, somente com atestado e casos previstos;</li>
+            <li>Nossa Sala de Aula é um ambiente seguro, fiquem a vontade para perguntar, tirar dúvidas, fazer
+              experimentos, é um prazer ajudar e contribuir para o crescimento de cada um de vocês;</li>
+            <li>Evitem Conversas Paralelas, por mais que pareça que temos muito tempo, nosso tempo em sala de aula é
+              curto, aproveitem;</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Combinados de Ouro</h2>
+          <ul>
+            <li>Se tivermos alguma atividade manuscrita, caprichem na caligrafia, não sou farmacêutico, se eu não
+              conseguir ler, não tem nota;</li>
+            <li>Lembrem-se em toda e qualquer atividade que desenvolvermos, eu sei que o Chat-GPT sabe como resolver,
+              nesse momento quero saber de vocês, não tenham medo de errar, de testar, de experimentar, perguntem se
+              necessário, desenvolvam suas capacidades.</li>
+            <li>Guardem as conversas para momentos extra-classe, todos aqui são amigos, mas durante as aulas, o
+              importante é ouvir, perguntar e
+              interagir, com o professor.</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <h1>Dúvidas?</h1>
+      </section>
+
+      <section>
+        <h1>Sistemas Operacionais Móveis</h1>
+      </section>
+
+      <section>
+        <h2>Sistemas Operacionais móveis</h2>
+        <ul>
+          <li>Antes do surgimento dos smartphones modernos, diversas iniciativas tentaram criar plataformas capazes de
+            executar aplicações de terceiros em telefones celulares;</li>
+
+          <li>Uma das iniciativas mais populares foi o Java 2 Micro Edition (J2ME), que permitia o desenvolvimento de
+            aplicações Java para uma grande variedade de dispositivos móveis;</li>
+
+          <li>A proposta era oferecer uma máquina virtual padronizada, permitindo que um mesmo aplicativo pudesse ser
+            executado em aparelhos de diferentes fabricantes;</li>
+
+          <li>Na prática, entretanto, o mercado era extremamente fragmentado. Os dispositivos possuíam diferentes
+            capacidades de hardware, resoluções de tela, versões da plataforma Java e conjuntos de APIs disponíveis;
+          </li>
+
+          <li>Além das APIs padronizadas, muitos fabricantes disponibilizavam recursos exclusivos através de bibliotecas
+            proprietárias, criando dependências específicas para determinados modelos de aparelhos;</li>
+
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sistemas Operacionais móveis</h2>
+        <ul>
+          <li>Como consequência, um aplicativo que funcionava corretamente em um dispositivo frequentemente apresentava
+            falhas ou limitações em outros modelos;</li>
+
+          <li>Esse cenário aumentava significativamente a complexidade do desenvolvimento, dos testes e da manutenção
+            dos
+            aplicativos, dificultando a distribuição em larga escala;</li>
+          <li>Nessas condições o Slogan do Java <b><i>"Write once, Run Everywhere"</i>,(Escreva uma vez e rode onde
+              quiser)</b>, se tornava <b><i>"Write once, Test Everywhere"</i></b></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sistemas Operacionais Móveis</h2>
+        <div class="imageRow">
+          <div class="imgContainer" style="width:25%; height: 80%">
+            <p>Motorola Razr V3</p>
+            <img src="img/v3.png">
+          </div>
+          <div class="imgContainer" style="width:20%; height: 80%">
+            <p>Nokia C1</p>
+            <img src="img/nokia.png">
+          </div>
+          <div class="imgContainer" style="width:25%; height: 80%">
+            <p>LG Qwerty</p>
+            <img src="img/lg.png">
+          </div>
+          <div class="imgContainer fragment fade-in-zoom" style="width:24%; height: 100%">
+            <img src="img/lg_qwerty.png">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sistemas Operacionais Móveis</h2>
+        <ul>
+          <li>Mas foi só em 2007 o mundo viu uma proposta para tentar solucionar esse problema, era lançado ao púbblico
+            então o iPhone, usando o sistema operacional iPhone OS</li>
+          <li>E no ano seguinte o mundo veria o seu principal rival, o <b>HTC Dream One</b> era lançado tendo o Android
+            como seu sistema operacional</li>
+          <li>Vale ressaltar que, embora o iPhone tenha sido lançado primeiro e tenha trazido a proposta de plataforma
+            de desenvolvimento unificada, que permitiria que desenvolvedores lançassem seus próprios aplicativos, a
+            plataforma demorou muito a ter uma adesão em massa, por parte dos desenvolvedores</li>
+          <li>Em contrapartida, quando o Android Chegou ao mercado sua loja de aplicativos já estava lotada de jogos e
+            aplicativos utilitários, frutos do <b><i>Google Summer of Code</i></b>. Evento acadêmico da Google, que
+            introduziu desenvolvedores terceiros ao ecossistema de desenvolvimento Android</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sistemas Operacionais Móveis</h2>
+        <div class="imageRow">
+          <div class="imgContainer" style="width:50%; height: 80%">
+            <p>HTC Dream One</p>
+            <img src="img/htc-g1.png">
+          </div>
+          <div class="imgContainer" style="width:49%; height: 80%">
+            <p>Google Nexus G1</p>
+            <img src="img/nexus-g1.png">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sistemas Operacionais Móveis</h2>
+        <ul>
+          <li>O modelo de entrega de aplicativos através de uma loja unificada, foi um divisor de águas, mudando para
+            sempre como desenvolvedores podiam comercializar suas soluções;</li>
+          <li>Contudo velhos problemas ainda demoraram para serem sanados, pelo menos para os dispositivos Android</li>
+          <div class="imageRow">
+            <div class="imgContainer" style="width:15%; height: 10%">
+              <img src="img/xperia_mini.png">
+            </div>
+            <div class="imgContainer" style="width:49%; height: 80%">
+              <img src="img/devices.png">
+            </div>
+          </div>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sistemas Operacionais Móveis</h2>
+        <ul>
+          <li>Sem sombra de dúvidas o Android viabilizou o maior número de dispositivos interessantes e diferentes no
+            mercado de smartphones</li>
+        </ul>
+        <div class="imageRow">
+          <div class="imgContainer fragment fade-in-zoom" style="width:33%; height: 80%">
+            <img src="img/xperia_play.png">
+          </div>
+          <div class="imgContainer fragment fade-in-zoom" style="width:33%; height: 80%">
+            <img src="img/razr-60.png">
+          </div>
+          <div class="imgContainer fragment fade-in-zoom" style="width:32%; height: 80%">
+            <img src="img/razr-fold.png">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sistemas Operacionais Móveis</h2>
+        <div style="width: 900px; height: 500px; margin: auto;">
+          <canvas id="worldMarketShare"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sistemas Operacionais Móveis</h2>
+        <div style="width:900px; height:500px; margin:auto;">
+          <canvas id="marketShare"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <h1>Ambiente de Desenvolvimento</h1>
+      </section>
+
+      <section>
+        <h1>Arquitetura do Android</h1>
+      </section>
+
+      <section>
+        <h2>Arquitetura do Android</h2>
+        <img src="img/android_layers.png" height="80%">
+      </section>
+
+      <section>
+        <h2>Ambiente de Desenvolvimento</h2>
+        <ul>
+          <li>Como é de se esperar cada plataforma tem seu próprio ambiente de Desenvolvimento, e não é surpresa que,
+            dispositivos Apple, demandam todo o ecossistema Apple</li>
+          <li>Enquanto o Ambiente de Desenvolvimento Android pode ser executado em qualquer ecossistema</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ambiente de Desenvolvimento</h2>
+        <ul>
+          <li>Como é de se esperar cada plataforma tem seu próprio ambiente de Desenvolvimento, e não é surpresa que,
+            dispositivos Apple, demandam todo o ecossistema Apple</li>
+          <li>Enquanto o Ambiente de Desenvolvimento Android pode ser executado em qualquer ecossistema, viabilizando
+            uma base maior de desenvolvedores</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ambiente de Desenvolvimento</h2>
+        <ul>
+          <li>Inicialmente a linguagem de progrmaação utilizada para criar aplicações Android foi o Java e todo o SDK
+            foi criado para suportar essa linguagem</li>
+          <li>Hoje depois de várias questões, inclusive jurídicas a linguagem reccomendada para o desenvolvimento de
+            Aaplicativos android é o Kotlin</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ambiente de Desenvolvimento</h2>
+        <pre>
+          <code data-trim data-noescape data-line-numbers>
+            fun main() {
+              println("Hello, world!")
+            }
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>Ambiente de Desenvolvimento</h2>
+        <img src="img/android_studio.png" height="80%">
+      </section>
+
+
+      <section>
+        <h1>Exemplos</h1>
+      </section>
+
+      <section>
+        <h1>OBRIGADO!</h1>
+        <p>Podem me encontrar aqui:</p>
+        <ul>
+          <li>gustavo.palma@unisal.edu.br</li>
+          <li>www.gustavopalma.com.br</li>
+        </ul>
+      </section>
+
+
+    </div>
+  </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="../../../dist/reveal.js"></script>
+
+  <script>
+    let dataLabels = [];
+    let dataValues = [];
+    let speedups = [];
+    let chart;
+
+    // Referências
+    const addBtn = document.getElementById('add-btn');
+    const plotBtn = document.getElementById('plot-btn');
+    const tableBody = document.querySelector('#data-table tbody');
+    const labelInput = document.getElementById('label');
+    const valueInput = document.getElementById('value');
+
+    function createWorldMarketShare() {
+      const ctx = document.getElementById('worldMarketShare');
+
+      new Chart(ctx, {
+        type: 'bar',
+
+        data: {
+          labels: [
+            'Android',
+            'iOS',
+            'Outros'
+          ],
+
+          datasets: [{
+            label: 'Participação (%)',
+            data: [68.00, 31.94, 0.06],
+
+            backgroundColor: [
+              '#3DDC84',
+              '#999999',
+              '#607D8B'
+            ],
+
+            borderColor: [
+              '#2E8B57',
+              '#555555',
+              '#455A64'
+            ],
+
+            borderWidth: 2
+          }]
+        },
+
+        options: {
+
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false
+            },
+
+            title: {
+              display: true,
+              text: 'Participação Mundial dos Sistemas Operacionais Móveis'
+            }
+          },
+
+          scales: {
+
+            y: {
+
+              beginAtZero: true,
+
+              max: 100,
+
+              title: {
+                display: true,
+                text: 'Participação (%)'
+              }
+            }
+          }
+        }
+      });
+    }
+
+
+    function createMarketShare() {
+      const ctx = document.getElementById('marketShare');
+
+      new Chart(ctx, {
+        type: 'bar',
+
+        data: {
+          labels: [
+            'Android',
+            'iOS'
+          ],
+
+          datasets: [{
+            label: 'Participação (%)',
+            data: [78, 22],
+
+            backgroundColor: [
+              '#3DDC84',
+              '#999999'
+            ],
+
+            borderColor: [
+              '#2E8B57',
+              '#555555'
+            ],
+
+            borderWidth: 2
+          }]
+        },
+
+        options: {
+
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false
+            },
+
+            title: {
+              display: true,
+              text: 'Participação dos Sistemas Operacionais Móveis no Brasil'
+            }
+          },
+
+          scales: {
+
+            y: {
+
+              beginAtZero: true,
+
+              max: 100,
+
+              title: {
+                display: true,
+                text: 'Participação (%)'
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Função para atualizar o gráfico
+    function updateChart() {
+      if (chart) chart.destroy();
+
+      const ctx = document.getElementById('lineChart').getContext('2d');
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: dataLabels,
+          datasets: [{
+            label: 'Cores',
+            data: dataLabels,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            fill: true,
+            tension: 0.3
+          }, {
+            label: 'Speedup',
+            data: speedups,
+            borderColor: 'rgba(179, 4, 4, 1)',
+            backgroundColor: 'rgba(179, 4, 4, 0.2)',
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: true } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    }
+
+    if (addBtn != null) {
+      // Adicionar linha à tabela
+      addBtn.addEventListener('click', () => {
+        const label = labelInput.value.trim();
+        const value = parseFloat(valueInput.value);
+
+        if (!label || isNaN(value)) return;
+
+        var idx = dataValues.length;
+        console.log(idx);
+        var speedup = 1;
+        if (idx != 0) {
+          speedup = dataValues[0] / value;
+          console.log(dataValues[0] + "/" + value);
+        }
+
+        dataLabels.push(label);
+        dataValues.push(value);
+        speedups.push(speedup);
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+    <td>${label}</td>
+    <td>${value}</td>
+    <td>${speedup}</td>
+  `;
+        tableBody.appendChild(row);
+
+        labelInput.value = '';
+        valueInput.value = '';
+      });
+    }
+    // Plotar gráfico ao clicar no botão
+    plotBtn.addEventListener('click', () => {
+      updateChart();
+    });
+  </script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script>
+    const iframe = document.getElementById('terminal');
+    if (iframe != null) {
+      iframe.onload = () => {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const style = doc.createElement('style');
+        style.innerHTML = `
+      .xterm {
+        font-size: 20px !important;
+        line-height: 1.2 !important;
+      }
+    `;
+        doc.head.appendChild(style);
+      };
+    }
+  </script>
+  <script>
+    Reveal.on('ready', event => {
+      const headerTemplate = document.getElementById('header-template');
+      const footerTemplate = document.getElementById('footer-template');
+
+      document.querySelectorAll('.slide-background').forEach(backgroundDiv => {
+        if (headerTemplate) {
+          backgroundDiv.appendChild(headerTemplate.cloneNode(true));
+        }
+        if (footerTemplate) {
+          backgroundDiv.appendChild(footerTemplate.cloneNode(true));
+        }
+      });
+
+      const nomeDisciplina = "Desenvolvimento Web e Mobile";
+      const assuntoAula = "Desenvolvimento Web e Mobile - Aula Inicial"
+      const aulaNum = '1';
+      const currentDate = new Date();
+
+      // Get the full four-digit year
+      const currentYear = " " + currentDate.getFullYear(); // e.g., 2026
+
+      // Find the HTML element by its ID and set its text content to the current year
+      document.getElementById('year-placeholder').textContent = "\  " + currentYear;
+      var elems = document.getElementsByClassName('lecture_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = nomeDisciplina;
+      }
+      document.title = nomeDisciplina;
+      document.getElementById('aula_num_placeholder').textContent = aulaNum
+      elems = document.getElementsByClassName('lecture_subject_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = assuntoAula;
+      }
+      createWorldMarketShare();
+      createMarketShare();
+    });
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'slide',
+      center: true,
+      width: "100%",
+      height: "100%",
+      margin: 0,
+      controls: true,
+      controlsBackArrows: 'faded',
+      progress: true,
+      plugins: [RevealHighlight, RevealZoom],
+    });
+  </script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</body>
+
+</html>

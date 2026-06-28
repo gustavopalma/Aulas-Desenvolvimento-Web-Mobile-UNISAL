@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title><span class="lecture_placeholder"></title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="css/mine.css">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+
+
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <div id="header-template">
+    <a href="https://unisal.br/">
+      <img src="img/logo_unisal.png" alt="Logo">
+    </a>
+    <h1>Aula &nbsp; <span id="aula_num_placeholder"></span> &nbsp; - &nbsp; <span class="lecture_placeholder"></span>
+      &nbsp; - &nbsp; <span class="lecture_subject_placeholder"></span></h1>
+  </div>
+
+  <!-- Rodapé -->
+  <div id="footer-template">
+    UNISAL - São José, Campinas - &nbsp; <span id="year-placeholder"></span>
+  </div>
+
+  <!-- Slides -->
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <a href="https://unisal.br/">
+          <img src="img/logo_unisal.png" alt="logo unisal"
+            style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+        </a>
+        <h2><span class="lecture_placeholder"></h2>
+        <h3><span class="lecture_subject_placeholder"></span></h3>
+        <p>
+          <small>Prof. Me. Gustavo Ferreira Palma</small>
+        </p>
+      </section>
+
+      <section>
+        <h2>Pauta</h2>
+        <ul>
+          <li>Kit de Sensores;</li>
+          <li>Acelerômetro;</li>
+          <li>Aplicações;</li>
+          <li>Desenvolvimento de Exemplo Prático.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Kit de Sensores</h2>
+        <ul>
+          <li>Os Smartphones modernos atualmente possuem um kit completo de sensores, contando com acelerôtros,
+            giroscópios, termômetros, luxímetros, bussolas e alguns outros;</li>
+          <li>Esses sensores podem ser utilizados pelas mais diversas aplicações, variando desde câmeras até aplicativos
+            utilitários como níveladores, ou bússolas</li>
+          <li>Um dos sensores mais interessantes e úteis presentes nos smartphones é o acelerômetro.
+        </ul>
+
+        </ul>
+      </section>
+
+      <section>
+        <h1>Acelerômetro</h1>
+      </section>
+
+      <section>
+        <h2>Acelerômetro</h2>
+        <ul>
+          <li>Os acelerômetros atuam como pêndulos eletrônicos, baseando seu comportamento no de um pêndulo mecânico
+          </li>
+        </ul>
+        <img src="img/pendulo_mecanico.png" style="width: 50%;">
+      </section>
+
+      <section>
+        <h2>Acelerômetro</h2>
+        <ul>
+          <li>Construção Interna de um Acelerômetro</li>
+        </ul>
+        <img src="img/acelerometro.png" style="width: 49%;">
+      </section>
+
+      <section>
+        <h1>Aplicações</h1>
+      </section>
+
+      <section>
+        <h2>Aplicações</h2>
+        <ul>
+          <li>Utilizando o SDK do android conseguimos reproduzir uma das experiências mais interessantes envolvendo
+            pêndulos, o calculo da força da aceleração da gravidade:</li>
+        </ul>
+
+        <ul>
+          <li>O acelerômetro fornece um vetor de aceleração:</li>
+        </ul>
+        <div class="math">
+          \[
+          \vec{a} =
+          \begin{bmatrix}
+          a_x\\
+          a_y\\
+          a_z
+          \end{bmatrix}
+          \]
+        </div>
+      </section>
+
+      <section>
+        <h2>Aplicações</h2>
+        <ul>
+          <li>Estimativa da gravidade (Filtro Passa-Baixa), a aceleração da gravidade é estimada utilizando um filtro
+            passa-baixa:</li>
+        </ul>
+        <div class="math">
+          \[
+          \vec{g}_k=
+          \alpha\vec{g}_{k-1}
+          +
+          (1-\alpha)\vec{a}_k
+          \]
+        </div>
+        <ul>
+          <li>Onde $ \alpha\ $ é determiado por $\alpha=
+            \frac{\tau}
+            {\tau+\Delta t}$</li>
+          <li>
+            Sendo:
+            <ul>
+              <li>$ t $: a constante de tempo do filtro;</li>
+              <li>$ \Delta T $: a constante de tempo do filtro;</li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>Aplicando a cada um dos eixos temos:</li>
+          <ul>
+            <li>$ g_x(k)= \alpha g_x(k-1) + (1-\alpha)a_x(k) $</li>
+            <li>$ g_y(k)= \alpha g_y(k-1) + (1-\alpha)a_y(k) $</li>
+            <li>$ g_z(k)= \alpha g_z(k-1) + (1-\alpha)a_z(k) $</li>
+            <ul>
+              <li>Sendo $ K $, a leitura atual do sensor em cada um dos eixos </li>
+            </ul>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aplicações</h2>
+        <ul>
+          <li> Depois de Estimar a gravidade podemos remove-la (Filtro Passa-Alta), assim tendo como resultante a
+            aceleração linear aplicada ao dispositivo:</li>
+        </ul>
+        <div class="math">
+          $$
+          \vec{a}_{lin}
+          =
+          \vec{a}
+          -
+          \vec{g}
+          $$
+        </div>
+
+        <ul>
+          <li>Expandindo para cada um dos eixos temos:</li>
+          <ul>
+            <li>$ a_{lin,x} = a_x-g_x $</li>
+            <li>$ a_{lin,y} = a_y-g_y $</li>
+            <li>$ a_{lin,z} = a_z-g_z $</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aplicações</h2>
+        <ul>
+          <li>Para sintetizar os dados e apresentar um unico valor escalar, podemos calcular o módulo da aceleração da
+            gravidade:</li>
+
+          <div class="math">
+            $$
+            |\vec g|
+            =
+            \sqrt{
+            g_x^2+
+            g_y^2+
+            g_z^2
+            }
+            $$
+          </div>
+          <li>Seguindo a mesma ideia, podemos sintetizar os valores da aceleração aplicada ao dispositivo em um único
+            valor escalar, obtendo o módulo da aceleração linear:</li>
+          <div class="math">
+            $$
+            |\vec a_{lin}|
+            =
+            \sqrt{
+            a_{lin,x}^2+
+            a_{lin,y}^2+
+            a_{lin,z}^2
+            }
+            $$
+          </div>
+        </ul>
+
+      </section>
+
+      <section>
+        <h1>Implementando o modelo em um exemplo prático</h1>
+      </section>
+
+      <section>
+        <h1>OBRIGADO!</h1>
+        <p>Podem me encontrar aqui:</p>
+        <ul>
+          <li>gustavo.palma@unisal.edu.br</li>
+          <li>www.gustavopalma.com.br</li>
+        </ul>
+      </section>
+
+
+    </div>
+  </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="../../../dist/reveal.js"></script>
+
+  <script>
+    let dataLabels = [];
+    let dataValues = [];
+    let speedups = [];
+    let chart;
+
+    // Referências
+    const addBtn = document.getElementById('add-btn');
+    const plotBtn = document.getElementById('plot-btn');
+    const tableBody = document.querySelector('#data-table tbody');
+    const labelInput = document.getElementById('label');
+    const valueInput = document.getElementById('value');
+
+    function createWorldMarketShare() {
+      const ctx = document.getElementById('worldMarketShare');
+
+      new Chart(ctx, {
+        type: 'bar',
+
+        data: {
+          labels: [
+            'Android',
+            'iOS',
+            'Outros'
+          ],
+
+          datasets: [{
+            label: 'Participação (%)',
+            data: [68.00, 31.94, 0.06],
+
+            backgroundColor: [
+              '#3DDC84',
+              '#999999',
+              '#607D8B'
+            ],
+
+            borderColor: [
+              '#2E8B57',
+              '#555555',
+              '#455A64'
+            ],
+
+            borderWidth: 2
+          }]
+        },
+
+        options: {
+
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false
+            },
+
+            title: {
+              display: true,
+              text: 'Participação Mundial dos Sistemas Operacionais Móveis'
+            }
+          },
+
+          scales: {
+
+            y: {
+
+              beginAtZero: true,
+
+              max: 100,
+
+              title: {
+                display: true,
+                text: 'Participação (%)'
+              }
+            }
+          }
+        }
+      });
+    }
+
+
+    function createMarketShare() {
+      const ctx = document.getElementById('marketShare');
+
+      new Chart(ctx, {
+        type: 'bar',
+
+        data: {
+          labels: [
+            'Android',
+            'iOS'
+          ],
+
+          datasets: [{
+            label: 'Participação (%)',
+            data: [78, 22],
+
+            backgroundColor: [
+              '#3DDC84',
+              '#999999'
+            ],
+
+            borderColor: [
+              '#2E8B57',
+              '#555555'
+            ],
+
+            borderWidth: 2
+          }]
+        },
+
+        options: {
+
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false
+            },
+
+            title: {
+              display: true,
+              text: 'Participação dos Sistemas Operacionais Móveis no Brasil'
+            }
+          },
+
+          scales: {
+
+            y: {
+
+              beginAtZero: true,
+
+              max: 100,
+
+              title: {
+                display: true,
+                text: 'Participação (%)'
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Função para atualizar o gráfico
+    function updateChart() {
+      if (chart) chart.destroy();
+
+      const ctx = document.getElementById('lineChart').getContext('2d');
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: dataLabels,
+          datasets: [{
+            label: 'Cores',
+            data: dataLabels,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            fill: true,
+            tension: 0.3
+          }, {
+            label: 'Speedup',
+            data: speedups,
+            borderColor: 'rgba(179, 4, 4, 1)',
+            backgroundColor: 'rgba(179, 4, 4, 0.2)',
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: true } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    }
+
+    if (addBtn != null) {
+      // Adicionar linha à tabela
+      addBtn.addEventListener('click', () => {
+        const label = labelInput.value.trim();
+        const value = parseFloat(valueInput.value);
+
+        if (!label || isNaN(value)) return;
+
+        var idx = dataValues.length;
+        console.log(idx);
+        var speedup = 1;
+        if (idx != 0) {
+          speedup = dataValues[0] / value;
+          console.log(dataValues[0] + "/" + value);
+        }
+
+        dataLabels.push(label);
+        dataValues.push(value);
+        speedups.push(speedup);
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+    <td>${label}</td>
+    <td>${value}</td>
+    <td>${speedup}</td>
+  `;
+        tableBody.appendChild(row);
+
+        labelInput.value = '';
+        valueInput.value = '';
+      });
+    }
+    // Plotar gráfico ao clicar no botão
+    plotBtn.addEventListener('click', () => {
+      updateChart();
+    });
+  </script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/math/math.js"></script>
+  <script>
+    const iframe = document.getElementById('terminal');
+    if (iframe != null) {
+      iframe.onload = () => {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const style = doc.createElement('style');
+        style.innerHTML = `
+      .xterm {
+        font-size: 20px !important;
+        line-height: 1.2 !important;
+      }
+    `;
+        doc.head.appendChild(style);
+      };
+    }
+  </script>
+  <script>
+    Reveal.on('ready', event => {
+      const headerTemplate = document.getElementById('header-template');
+      const footerTemplate = document.getElementById('footer-template');
+
+      document.querySelectorAll('.slide-background').forEach(backgroundDiv => {
+        if (headerTemplate) {
+          backgroundDiv.appendChild(headerTemplate.cloneNode(true));
+        }
+        if (footerTemplate) {
+          backgroundDiv.appendChild(footerTemplate.cloneNode(true));
+        }
+      });
+
+      const nomeDisciplina = "Desenvolvimento Web e Mobile";
+      const assuntoAula = "Desenvolvimento Web e Mobile - Android - Conhecendo o kit de Sensores"
+      const aulaNum = '2';
+      const currentDate = new Date();
+
+      // Get the full four-digit year
+      const currentYear = " " + currentDate.getFullYear(); // e.g., 2026
+
+      // Find the HTML element by its ID and set its text content to the current year
+      document.getElementById('year-placeholder').textContent = "\  " + currentYear;
+      var elems = document.getElementsByClassName('lecture_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = nomeDisciplina;
+      }
+      document.title = nomeDisciplina;
+      document.getElementById('aula_num_placeholder').textContent = aulaNum
+      elems = document.getElementsByClassName('lecture_subject_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = assuntoAula;
+      }
+      createWorldMarketShare();
+      createMarketShare();
+    });
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'slide',
+      center: true,
+      width: "100%",
+      height: "100%",
+      margin: 0,
+      controls: true,
+      controlsBackArrows: 'faded',
+      progress: true,
+      plugins: [RevealHighlight, RevealZoom, RevealMath.MathJax3],
+    });
+  </script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</body>
+
+</html>

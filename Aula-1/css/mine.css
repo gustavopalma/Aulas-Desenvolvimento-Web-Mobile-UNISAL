@@ -1,0 +1,178 @@
+    body {
+      margin-top: 10px;
+      font-family: Lato, sans-serif;
+      ;
+    }
+
+    /* Cabeçalho */
+    #header-template {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 1000;
+      border-bottom: 2px solid #ccc;
+    }
+
+    #header-template img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    #header-template h1 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    /* Rodapé */
+    #footer-template {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: #041f56;
+      display: flex;
+      color: #FFFFFF;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      border-top: 2px solid #ccc;
+      z-index: 1000;
+    }
+
+    /* Área Reveal com padding */
+    .reveal {
+      padding-top: 70px;
+      /* altura cabeçalho + margem */
+      padding-bottom: 50px;
+      /* altura rodapé + margem */
+    }
+
+    .reveal-viewport {
+      height: calc(100vh - 70px - 50px) !important;
+    }
+
+    /* Centralização vertical real */
+    .slides section {
+      height: calc(100vh - 70px - 50px) !important;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .imageRow {
+      display: flex;
+      flex-wrap: wrap;
+      /* permite quebrar linha se não couber */
+      gap: 10px;
+      /* espaço entre os blocos */
+      justify-content: center;
+      /* centraliza os itens */
+    }
+
+    .imgContainer {
+      display: flex;
+      flex-direction: column;
+      /* organiza imagem e texto em coluna */
+      justify-content: center;
+      /* centraliza verticalmente */
+      align-items: center;
+      /* centraliza horizontalmente */
+      height: 100%;
+      /* ou defina uma altura fixa, ex: 200px */
+      text-align: center;
+    }
+
+    .content {
+      margin-top: 80px;
+      margin-bottom: 60px;
+    }
+
+    .quad-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+      height: 60vh;
+      align-items: stretch;
+    }
+
+    .quad {
+      border-radius: 16px;
+      border: 2px solid #970202;
+      color: #970202;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.2;
+      background: rgba(255, 255, 255, .06);
+      backdrop-filter: blur(3px);
+    }
+
+    .fragment.fade-in-zoom {
+      transform: scale(.92);
+    }
+
+    .fragment.visible.fade-in-zoom {
+      transform: none;
+    }
+
+    .scroll-slide {
+      overflow-y: auto;
+      max-height: 100vh;
+      padding: 1em;
+    }
+
+    #data-table {
+      font-size: 0.8em;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.4em 1em;
+      font-size: 0.4em;
+      font-weight: 100;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    /* Variações */
+    .btn-primary {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background-color: #a71d2a;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background-color: #1e7e34;
+    }
