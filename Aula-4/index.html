@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/mine.css">
   <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
-
+  <!-- Link Util https://console.cloud.google.com/projectselector2/google/maps-apis/credentials?utm_source=Docs_CreateAPIKey&utm_content=Docs_maps-android-backend&hl=pt-br&pli=1-->
 
 </head>
 
@@ -34,6 +34,7 @@
   <!-- Slides -->
   <div class="reveal">
     <div class="slides">
+
       <section>
         <a href="https://unisal.br/">
           <img src="img/logo_unisal.png" alt="logo unisal"
@@ -49,96 +50,203 @@
       <section>
         <h2>Pauta</h2>
         <ul>
-          <li>Android <i>Intents</i>;</li>
-          <li>Acesso à Câmera, Captura de Fotos e manipulação do Resultado;</li>
-          <li>Desenvolvimento de Exemplo Prático.</li>
+          <li>GPS e Métodos de Geolocalização</li>
+          <li>Autorizando Dados Sensíveis no Android</li>
+          <li>Integrando o Suporte a Mapas a uma Aplicação Android</li>
+          <ul>
+            <li>Criando um Projeto no Painel do Google</li>
+            <li>Gerando a Chave de API</li>
+            <li>Integrando bibliotecas ao projeto Android</li>
+          </ul>
+          <li>Exmeplo Prático</li>
         </ul>
       </section>
 
       <section>
-        <h2>Android <i>Intents</i></h2>
+        <h1>GPS e Métodos de Geolocalização</h1>
+      </section>
+
+      <section>
+        <h2>GPS e Métodos de Geolocalização</h2>
         <ul>
-          <li>Antes de intedermos o que são as Intents é necessário relembrar algumas características importantes sobre
-            o Android;</li>
-          <li>Diferentemente da maioria dos sistemas operacionais Desktop, as aplicações Android, não acessam o hardware
-            de forma direta através de <i>drivers</i>, ao Invés disso existem duas maneiras viáveis;
-          </li>
+          <li>O Sistema de Posicionamento Glbal, GPS, é um dos primeiros sistemas de localização via satélite do mundo e
+            um dos primeiros sistemas a ser disponibilizado aos civis</li>
+          <li>Vale lembrar que esse é uma inciativia dos Estados Unidos, e que não é única no mundo.</li>
           <ul>
-            <li>Utilizando as APIs disponibilizadas pelo <i>Framework</i>, assumindo o controle dos recursos, através
-              dos diferentes;
-              <i>"Managers"</i>, dos dispositivo, e somente se nenhum outrou app estiver utilizando e sempre como
-              conscentimento do usuário;
-            </li>
-            <li>Ou informando ao Sistema operacional que a aplicação tem a intenção de consumir algum recurso, como a
-              câmera ou mesmo ligar para alguém, através do aplicativo padrão já instalado no telefone</li>
+            <li>A União Européia tem o Galileo</li>
+            <li>A Rússia tem o GLONASS</li>
+            <li>A China Possui o BeiDou</li>
+            <li>Em uma escala menor temos o QZSS no Japão</li>
+            <li>E também temos o NavIC na Índia</li>
+          </ul>
+          <li>Atualmente é comum encontrar no mercado dispositivos que atuem com fusão de sistemas de Geolocalização,
+            não dependendo apenas de um sistema, e utilizando as combinações para uma maior precisão</li>
+          <li>>Os dispositivos capazes de utilizar múltiplos sistemas de navegação por satélite são conhecidos como
+            receptores <b>GNSS (Global Navigation Satellite System) </b></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>GPS e Métodos de Geolocalização</h2>
+        <ul>
+          <li>Assim como uma andorinha só não faz verão, um único satélite não é suficiente para determinar a posição de
+            um receptor na superfície da Terra.</li>
+
+          <li>Para que o sistema de posicionamento funcione, é necessário que exista uma <strong>constelação de
+              satélites</strong>, distribuídos em órbitas conhecidas.</li>
+
+          <li>Os satélites do GPS encontram-se em órbitas médias (MEO), continuamente monitoradas e conhecidas com
+            grande precisão.</li>
+
+          <li>Ao receber simultaneamente os sinais de vários satélites, o receptor calcula sua distância em relação a
+            cada um deles.</li>
+
+          <li>Utilizando essas distâncias e as posições conhecidas dos satélites, o receptor determina sua posição por
+            meio de um processo denominado <strong>trilateração</strong>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>GPS e Métodos de Geolocalização</h2>
+        <canvas id="gpsCanvas" width="900" height="500"></canvas>
+      </section>
+
+      <section>
+        <h1>Autorizando Dados Sensíveis no Android</h1>
+      </section>
+
+      <section>
+        <h2>Autorizando Dados Sensíveis no Android</h2>
+        <ul>
+          <li>Desde a Versão 6.0 (Marshmallow) do Android, as permissões de tempo de execução (Runtime Permissions),
+            para qualquer periférico ou recurso que lide com dados sensíveis do usuário, como localização, fotos e até
+            mesmo Dados de contatos;</li>
+          <li>
+            Agora além de declarar os usos no Arquivo de Manifesto, é necessário solicitar ao usuário a permissão para
+            uso dos recursos, o conscentimento deve ser explicito. não sendo apenas informado que o aplicativo fará uso
+            de determinado recurso
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Autorizando Dados Sensíveis no Android</h2>
+        <pre>
+          <code>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+  
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"> </uses-permission>
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"> </uses-permission>
+    
+  <application
+    android:allowBackup="true"
+    android:dataExtractionRules="@xml/data_extraction_rules"
+    android:fullBackupContent="@xml/backup_rules" 
+    ...>
+      ...
+  </application>
+</manifest>
+        </code>
+      </pre>
+      </section>
+
+      <section>
+        <h2>Autorizando Dados Sensíveis no Android</h2>
+        <div style="width: 15%; margin: 0 auto;">
+          <video data-autoplay src="vid/runtime_permissions.webm"></video>
+        </div>
+      </section>
+
+      <section>
+        <h1>Integrando o Suporte a Mapas a uma Aplicação Android</h1>
+      </section>
+
+      <section>
+        <h2>Integrando o Suporte a Mapas a uma Aplicação Android</h2>
+        <ul>
+          <li>Para integrar o suporte ao Google Maps a nossa aplicação alguns passos tem que ser seguidos:</li>
+          <ul>
+            <li>Criar um projeto no Painel do Google;</li>
+            <li>Gerar uma Chave de API</li>
+            <li>Integrar as bibliotecas do maps</li>
           </ul>
         </ul>
       </section>
 
       <section>
-        <h2>Android <i>Intents</i></h2>
+        <h2>Criar um projeto no Painel do Google</h2>
         <ul>
-          <li>A comunicação da intenção de uso acontece através de uma <i>Intent</i></li>
-          <li>Após enviada, o <i>framework</i> recebe essa intent, verifica se a aplicação solicitante tem permissão
-            para faze-la, e então procura na lista de aplicações padrão uma aplicação para "resolve-la"</li>
-          <li>Uma Intent pode ou não devolver um resultado para a aplicação que a enviou</li>
-          <li>As intents são um mecanismo eficiente de troca de informações entre aplicações e o sistema oepracional.
-          </li>
-          <li>Vale lembrar que é possível emitir e receber <i>Intent</i> dentro de uma mesma aplicação</li>
+          <li>Para criar um projeto no Painel do Google acesse <a data-preview-link="false"
+              href="https://console.cloud.google.com/projectselector2/google/maps-apis/credentials?utm_source=Docs_CreateAPIKey&utm_content=Docs_maps-android-backend&hl=pt-br&pli=1"
+              target="_blank">este link</a></li>
+          <ul>
+            <li>E então clique em "Criar Projeto"</li>
+            <img src="img/criar_projeto.png">
+            <li>Após Criar o Projeto, vamos selecionar a API do Google maps e gerar uma chave para a aplicação</li>
+          </ul>
         </ul>
+      </section>
+      <section>
+        <h2>Criar um projeto no Painel do Google</h2>
+        <ul>
+          <li>A chave de API criada deve ser colocada no Arquivo de manifesto do projeto na seção "Application"</li>
+        </ul>
+
+        <pre>
+          <code>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+        <application
+        ...
+        android:theme="@style/Theme.GPSMapas">
+        
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="SUA_CHAVE_AQUI" > </meta-data>
+
+        <activity
+            android:name=".MainActivity">
+            ....
+        </activity>
+        ...
+        </application>
+</manifest>
+        </code>
+      </pre>
       </section>
 
       <section>
-        <h2>Android <i>Intents</i></h2>
-        <ul>
-          <li>O Fluxo para envio de uma intent para outro aplicação é demonstrado pelo seguinte fluxograma</li>
-        </ul>
-        <pre class="mermaid" style="transform: scale(1.1); transform-origin: center; margin-top: 55px;">
-flowchart LR
-
-    A[Aplicação Android] --> B[Cria uma Intent]
-    B --> C[Android Framework]
-    C --> D[Resolve a Intent]
-
-    subgraph Fluxo
-    direction TB
-
-        E{Existe app capaz<br/>de executar a ação?}
-
-        E -- Sim --> F[Aplicação compatível]
-        E -- Não --> G[Erro]
-
-        F --> H[Executa a tarefa]
-
-        H --> I{Retorna resultado?}
-
-        I -- Sim --> K[Atualiza estado]
-        I -- Não --> J[Sem retorno]
-
-        K --> L[Compose recompõe]
-
-        J --> N[Fim]
-        L --> N
-        G --> N
-    end
-
-    D --> E
-</pre>
+        <h1>Integrando bibliotecas ao projeto Android</h1>
       </section>
 
       <section>
-        <h2>Acesso à Câmera, Captura de Fotos e manipulação do Resultado</h2>
+        <h2>Integrando bibliotecas ao projeto Android</h2>
         <ul>
-          <li>Todo o acesso, e controle nessa aplicação fica a critério da aplicação padrão de câmera</li>
-          <li>Nenhuma permissão, ou alerta ao usuário precisa ser implementado pela aplicação que enviou a
-            <i>Intent</i>, Todas as questões de privacidade ficam a cargo do aplicativo padrão de câmera
-          </li>
-          <li>A aplicação que fez a requisição só deve receber e processar o retorno da oepração de captura</li>
+          <li>Além das chaves de API e permissões para que os mapas funcionem é necessário adicionar ao projeto todas as bibliotecas referentes a eles.</li>
+          <li>O Android utiliza um sistema de dependências dinâmicas, através do gerenciador de dependências Gradle, dessa forma não precisamos incluir as bibliotecas propriamente ditas, mas apenas dizer qual biblioteca e qual versão</li>
+          <li>Para isso precisamos edtar o arquvo "gradle.dependencies.kts", e adicionar as seguintes bibliotecas</li>
         </ul>
+
+        <pre>
+          <code>
+            android{
+              ...
+              dependencies {
+                ...
+                implementation("com.google.android.gms:play-services-maps:19.0.0")
+                implementation("com.google.maps.android:maps-compose:6.4.1")
+                ...
+              }
+            }
+          </code>
+        </pre>
       </section>
 
       <section>
-        <h1>Implementando um exemplo prático</h1>
+        <h1>Exemplo Prático</h1>
       </section>
 
       <section>
@@ -153,7 +261,7 @@ flowchart LR
 
     </div>
   </div>
-  </div>
+
 
   <!-- Scripts -->
   <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
@@ -166,6 +274,137 @@ flowchart LR
   <script src="plugin/zoom/zoom.js"></script>
   <script src="plugin/math/math.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin/plugin/mermaid/mermaid.js"></script>
+  <script>
+    const gpsAnim = (() => {
+      const canvas = document.getElementById("gpsCanvas");
+      const ctx = canvas.getContext("2d");
+
+      let running = true;
+      let t = 0;
+
+      const receiver = { x: 450, y: 380 };
+
+      const sats = [
+        { x: 180, y: 90, color: "#f59e0b", label: "S1" },
+        { x: 450, y: 70, color: "#22c55e", label: "S2" },
+        { x: 720, y: 110, color: "#3b82f6", label: "S3" },
+        { x: 620, y: 230, color: "#a855f7", label: "S4" },
+      ];
+
+      function dist(a, b) {
+        return Math.hypot(a.x - b.x, a.y - b.y);
+      }
+
+      function drawSatellite(s) {
+        ctx.fillStyle = s.color;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, 14, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = "#111827";
+        ctx.font = "16px sans-serif";
+        ctx.fillText(s.label, s.x - 10, s.y - 22);
+      }
+
+      function drawReceiver() {
+        ctx.fillStyle = "#ef4444";
+        ctx.beginPath();
+        ctx.arc(receiver.x, receiver.y, 10, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = "#111827";
+        ctx.font = "18px sans-serif";
+        ctx.fillText("Receptor", receiver.x - 38, receiver.y + 34);
+      }
+
+      function drawSignal(s) {
+        const d = dist(s, receiver);
+        const progress = (t % 120) / 120;
+        const r = d * progress;
+
+        ctx.strokeStyle = s.color;
+        ctx.setLineDash([8, 8]);
+        ctx.beginPath();
+        ctx.moveTo(s.x, s.y);
+        ctx.lineTo(receiver.x, receiver.y);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.globalAlpha = 0.25;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, r, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+
+      function drawDistanceCircle(s) {
+        const d = dist(s, receiver);
+
+        ctx.strokeStyle = s.color;
+        ctx.globalAlpha = 0.35;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, d, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+
+      function drawInfo() {
+        ctx.fillStyle = "#111827";
+        ctx.font = "18px sans-serif";
+        ctx.fillText("Dados do receptor", 30, 420);
+
+        ctx.font = "15px monospace";
+        ctx.fillText("Latitude:  -23.550520°", 30, 445);
+        ctx.fillText("Longitude: -46.633309°", 30, 465);
+        ctx.fillText("Satélites visíveis: 4", 30, 485);
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#f8fafc";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.strokeStyle = "#94a3b8";
+        ctx.lineWidth = 2;
+
+        ctx.beginPath();
+        ctx.arc(450, 620, 300, Math.PI, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.fillStyle = "#dbeafe";
+        ctx.beginPath();
+        ctx.arc(450, 620, 300, Math.PI, Math.PI * 2);
+        ctx.fill();
+
+        sats.forEach(drawSignal);
+        sats.forEach(drawDistanceCircle);
+        sats.forEach(drawSatellite);
+
+        drawReceiver();
+        drawInfo();
+
+        /*ctx.fillStyle = "#111827";
+        ctx.font = "22px sans-serif";
+        ctx.fillText("O receptor calcula sua posição pela interseção das distâncias", 180, 40);*/
+
+        if (running) t++;
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+
+      return {
+        toggle() {
+          running = !running;
+        },
+        reset() {
+          t = 0;
+        }
+      };
+    })();
+  </script>
   <script>
     const iframe = document.getElementById('terminal');
     if (iframe != null) {
@@ -197,8 +436,8 @@ flowchart LR
       });
 
       const nomeDisciplina = "Desenvolvimento Web e Mobile";
-      const assuntoAula = "Desenvolvimento Web e Mobile - Android - Android Intents e Câmera"
-      const aulaNum = '3';
+      const assuntoAula = "Desenvolvimento Web e Mobile - Android - GPS e Mapas"
+      const aulaNum = '4';
       const currentDate = new Date();
 
       // Get the full four-digit year
@@ -221,6 +460,7 @@ flowchart LR
     });
     Reveal.initialize({
       hash: true,
+      previewLinks: false,
       slideNumber: true,
       transition: 'slide',
       center: true,
