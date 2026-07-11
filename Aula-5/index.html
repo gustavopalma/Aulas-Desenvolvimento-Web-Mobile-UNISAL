@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title><span class="lecture_placeholder"></title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="css/mine.css">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <div id="header-template">
+    <a href="https://unisal.br/">
+      <img src="img/logo_unisal.png" alt="Logo">
+    </a>
+    <h1>Aula &nbsp; <span id="aula_num_placeholder"></span> &nbsp; - &nbsp; <span class="lecture_placeholder"></span>
+      &nbsp; - &nbsp; <span class="lecture_subject_placeholder"></span></h1>
+  </div>
+
+  <!-- Rodapé -->
+  <div id="footer-template">
+    UNISAL - São José, Campinas - &nbsp; <span id="year-placeholder"></span>
+  </div>
+
+  <!-- Slides -->
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <a href="https://unisal.br/">
+          <img src="img/logo_unisal.png" alt="logo unisal"
+            style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+        </a>
+        <h2><span class="lecture_placeholder"></h2>
+        <h3><span class="lecture_subject_placeholder"></span></h3>
+        <p>
+          <small>Prof. Me. Gustavo Ferreira Palma</small>
+        </p>
+      </section>
+
+      <section>
+        <h2>Pauta</h2>
+        <ul>
+          <li>Persistência de Dados no Android</li>
+          <li>Persistência de utilizando Bancos de Dados Locais</li>
+          <ul>
+            <li>SQLite</li>
+            <li>Android ROOM e Coroutines</li>
+            <li>Integrando bibliotecas ao projeto Android</li>
+          </ul>
+          <li>Exmeplo Prático</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Persistência de Dados no Android</h1>
+      </section>
+
+      <section>
+        <h2>Persistência de Dados no Android</h2>
+        <ul>
+          <li>A persistência de dados consiste, basicamente, no salvamento de dados. Persistir dados significa salva-los
+            e no Android isso pode ser feito de diversas formas, tendo como principais: </li>
+          <ul>
+            <li>Arquivos: Podem ser arquivos binários ou arquivos de texto, são salvos na memória <i>Flash</i> do
+              telefone, podem ser públicos ou privados</li>
+            <li>DataStore(SharedPreferences): O DataStore, é a versão moderna do SharedPreferences, que é uma forma
+              rápida para armazenar preferências do usuário, ou mesmo dados com baixo critério de confidencialidade</li>
+            <li>Bancos de Dados: Todo dispositivo Android possui embarcado uma versão do Banco de Dados SQLite, um
+              pequeno banco de dados relacional, que permite a persistência segura de dados, suportando operações
+              complexas, como JOINS ou criação de VIEWS</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Persistência de Dados no Android</h2>
+        <ul>
+          <li>Apesar ddo SQLite suportar tabelas com até 1GB de tamanho, e lidar bem com operações complexas,
+            originalmente as aplicações Android não foram pensadas para demandar um grande armazenamento de dados local
+            .</li>
+
+          <li>Em outras, palavras, podems criar aplicações que consigam gerenciar grandes volumes de dados e o banco de
+            dados pode lidar om eles, contudo não devemos.</li>
+
+          <li>Isso se deve em grande parte, por uma série de limitações e possibilidade de perda para os daods, como por
+            exemplo:.</li>
+          <ul>
+            <li>Se os dados forem armazenados apenas localmente, o usuário pode por descuido limpar o armazenamento
+              local do telefone simplesmente excluir todos os dados sem possibilidade de recuperação.</li>
+            <li>Caso o usuŕio migre para um telefone mais novo, os dados não serão transferidos.</li>
+          </ul>
+          <li>Para evitar esses problemas, o desenvolvedor deve optar pela integração da sua aplicação com serviços de
+            nuvem. Esse conteúdo será abordado posteriormente </li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Persistência de utilizando Bancos de Dados Locais</h1>
+      </section>
+
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - SQLite</h2>
+        <ul>
+          <li>O SQLite é um SGBD (Sistema Gerenciador de Bando de Dados) relacional, projetado para ambientes
+            embarcados;</li>
+          <li>Ao contrário de SGBDs como o MySQL ou SQL Server, o SQLite não precisa de um servidor rodando, ele
+            implementa a estratégia 'Self Contained File'</li>
+          <li>É um SGBD multiplataforma de códdigo aberto</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - Android Room E Couroutines</h2>
+        <ul>
+          <li>O Android Room, é um pequeno ORM (Object-Relational Mapping) desenvolvido pela Google para Android</li>
+          <li>O uso do Room, é encorajado pois reduz a complexidade e a necessidade de escrever códigos repetitivos uma
+            vez que ele pode automatizar a geração de códigos SQL e mesmo alguns códigos de manipulação de dados</li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - Android Room E Couroutines</h2>
+        <ul>
+          <li>Hierarquia entre componentes ROOM</li>
+        </ul>
+        <div class="mermaid" style="width: 100%;">
+          flowchart LR
+
+          A["Entity<br />(Tabela do banco de dados)"] -->B["DAO<br />(Data Access Object)<br />Operações com dados"]
+          B -->C["Database<br />Configurações do banco de dados"]
+        </div>
+
+      </section>
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - Android Room E Couroutines</h2>
+        <ul>
+          <li>Fluxo de Operações com Android Room</li>
+        </ul>
+        <div class="mermaid" style="width: 100%;">
+          flowchart LR
+
+          A["Objetos Kotlin"] -->B["Bibliotecas Room"]
+          B -->C["SQLite"]
+        </div>
+
+      </section>
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - Android Room E Couroutines</h2>
+        <pre>
+          <code>
+@Entity
+data class Pessoa(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int,
+    val nome: String,
+    val idade: Int
+)
+        </code>
+      </pre>
+      </section>
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - Android Room E Couroutines</h2>
+        <pre>
+          <code>
+@Dao
+interface PessoaDAO {
+
+    @Insert
+    suspend fun inserir(pessoa: Pessoa)
+
+    @Delete
+    suspend fun excluir(pessoa: Pessoa)
+
+    @Query("SELECT * FROM Pessoa")
+    suspend fun listar(): List&lt;Pessoa&gt;
+}
+        </code>
+      </pre>
+      </section>
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - Android Room E Couroutines</h2>
+        <pre>
+          <code>
+@Database(
+    entities = [Pessoa::class],
+    version = 1
+)
+abstract class AppDatabase : RoomDatabase() {
+
+    abstract fun pessoaDAO(): PessoaDAO
+}
+        </code>
+      </pre>
+      </section>
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - Android Room E Couroutines</h2>
+        <ul>
+          <li>Compreendendo a ideia de fucionamento do Room, precisamos entender o porque devemos usar Coroutines, e
+            qual a ideia por trás de sua aplicação</li>
+          <li>Primeiro, devemos entender como os processos funcionam sem as Coroutines:</li>
+        </ul>
+        <div class="mermaid" style="width: 100%;">
+          flowchart LR
+
+          A["Usuário clica em 'Salvar'"] -->B["Aplicação Espera o banco de dados concluir a tarefa"]
+          B -->C["Tela e Aplicação 'Congelam'"]
+        </div>
+        <ul>
+          <li>
+            Com o uso de Coroutines:
+          </li>
+        </ul>
+        <div class="mermaid" style="width: 100%;">
+          flowchart LR
+
+          A["Usuário clica em 'Salvar'"] -->B["Banco de dados trabalha em segundo plano"]
+          B -->C["Tela e Aplicação Respondem normalmente"]
+        </div>
+      </section>
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - Android Room E Couroutines</h2>
+        <ul>
+          <li>Quando estamos desenvolvendo métodos e funções utilizando os recursos das Coroutines, uma palavra chave
+            muda totalmente o fluxo de execução da aplicação</li>
+        </ul>
+        <pre>
+          <code>
+suspend fun salvarPessoa() {
+    dao.insert(pessoa)
+}
+        </code>
+      </pre>
+        <ul>
+          <li>Uma função marcada com suspend pode ser pausada e retomada sem bloquear a thread;</li>
+          <li>Ela só pode ser chamada dentro de outra coroutine ou de uma função suspend.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Persistência de utilizando Bancos de Dados Locais - Android Room E Couroutines</h2>
+        <ul>
+          <li>A gravação acontece em uma thread apropriada para operações de entrada e saída (I/O), mantendo a interface
+            responsiva.</li>
+        </ul>
+        <pre>
+          <code>
+lifecycleScope.launch() {
+
+    dao.insert(pessoa)
+
+}
+        </code>
+      </pre>
+        <ul>
+          <li>Fluxo Completo</li>
+        </ul>
+        <div class="mermaid" style="width: 100%;">
+          flowchart LR
+
+          A["Usuário clica em 'Salvar'"] -->B["Corroutine"]
+          B -->C["DAO"]
+          C -->D["Room"]
+          D -->E["SQLite"]
+        </div>
+      </section>
+
+      <section>
+        <h1>Integrando bibliotecas ao projeto Android</h1>
+      </section>
+
+      <section>
+        <h2>Integrando bibliotecas ao projeto Android</h2>
+        <ul>
+          <li>Mesmo o Room e as Coroutines sendo bibliotecas padrão do kotlin é necessário declarar o uso nos arquivos
+            gradle</li>
+        </ul>
+        <pre>
+          <code>
+plugins {
+...
+    alias(libs.plugins.ksp)
+}
+...
+dependencies {
+  ...
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+  ...
+}
+        </code>
+      </pre>
+      </section>
+
+
+      <section>
+        <h1>Exemplo Prático</h1>
+      </section>
+
+      <section>
+        <h1>OBRIGADO!</h1>
+        <p>Podem me encontrar aqui:</p>
+        <ul>
+          <li>gustavo.palma@unisal.edu.br</li>
+          <li>www.gustavopalma.com.br</li>
+        </ul>
+      </section>
+
+
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="../../../dist/reveal.js"></script>
+
+
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/math/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin/plugin/mermaid/mermaid.js"></script>
+
+
+  <script>
+    const iframe = document.getElementById('terminal');
+    if (iframe != null) {
+      iframe.onload = () => {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const style = doc.createElement('style');
+        style.innerHTML = `
+      .xterm {
+        font-size: 20px !important;
+        line-height: 1.2 !important;
+      }
+    `;
+        doc.head.appendChild(style);
+      };
+    }
+  </script>
+
+  <script>
+    Reveal.on('ready', event => {
+      const headerTemplate = document.getElementById('header-template');
+      const footerTemplate = document.getElementById('footer-template');
+
+      document.querySelectorAll('.slide-background').forEach(backgroundDiv => {
+        if (headerTemplate) {
+          backgroundDiv.appendChild(headerTemplate.cloneNode(true));
+        }
+        if (footerTemplate) {
+          backgroundDiv.appendChild(footerTemplate.cloneNode(true));
+        }
+      });
+
+      const nomeDisciplina = "Desenvolvimento Web e Mobile";
+      const assuntoAula = "Desenvolvimento Web e Mobile - Android - Persistência de Dados no Android"
+      const aulaNum = '5';
+      const currentDate = new Date();
+
+      // Get the full four-digit year
+      const currentYear = " " + currentDate.getFullYear(); // e.g., 2026
+
+      // Find the HTML element by its ID and set its text content to the current year
+      document.getElementById('year-placeholder').textContent = "\  " + currentYear;
+      var elems = document.getElementsByClassName('lecture_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = nomeDisciplina;
+      }
+      document.title = nomeDisciplina;
+      document.getElementById('aula_num_placeholder').textContent = aulaNum
+      elems = document.getElementsByClassName('lecture_subject_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = assuntoAula;
+      }
+      createWorldMarketShare();
+      createMarketShare();
+    });
+    Reveal.initialize({
+      hash: true,
+      previewLinks: false,
+      slideNumber: true,
+      transition: 'slide',
+      center: true,
+      width: "100%",
+      height: "100%",
+      margin: 0,
+      controls: true,
+      controlsBackArrows: 'faded',
+      progress: true,
+      plugins: [RevealHighlight, RevealZoom, RevealMath.MathJax3],
+    });
+  </script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</body>
+
+</html>
