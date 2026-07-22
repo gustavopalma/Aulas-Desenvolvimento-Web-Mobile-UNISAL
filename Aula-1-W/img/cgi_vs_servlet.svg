@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100">
+<defs>
+<style>
+.title{font:700 44px Arial,sans-serif;fill:#6b21a8}
+.subtitle{font:500 24px Arial,sans-serif;fill:#374151}
+.heading{font:700 34px Arial,sans-serif;fill:#1f2937}
+.label{font:700 24px Arial,sans-serif;fill:#1f2937}
+.small{font:500 20px Arial,sans-serif;fill:#374151}
+.note{font:700 22px Arial,sans-serif}
+.cell{stroke:#1f2937;stroke-width:3;rx:16;ry:16}
+</style>
+<marker id="redArrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+<path d="M0,0 L14,7 L0,14 z" fill="#b91c1c"/></marker>
+<marker id="greenArrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+<path d="M0,0 L14,7 L0,14 z" fill="#15803d"/></marker>
+<marker id="blueArrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+<path d="M0,0 L14,7 L0,14 z" fill="#2563eb"/></marker>
+</defs>
+
+<rect width="1800" height="1100" fill="#fff"/>
+<text x="70" y="80" class="title">CGI vs Servlet</text>
+<text x="70" y="125" class="subtitle">Duas formas históricas de executar lógica no servidor Web.</text>
+
+<!-- divisor -->
+<line x1="900" y1="165" x2="900" y2="1030" stroke="#d1d5db" stroke-width="4"/>
+
+<!-- CGI -->
+<text x="450" y="195" class="heading" text-anchor="middle">CGI</text>
+<text x="450" y="235" class="small" text-anchor="middle">Um novo processo é criado para cada requisição</text>
+
+<rect x="210" y="280" width="480" height="90" class="cell" fill="#dcecff"/>
+<text x="450" y="335" class="label" text-anchor="middle">Recebe requisição</text>
+
+<line x1="450" y1="370" x2="450" y2="425" stroke="#b91c1c" stroke-width="6" marker-end="url(#redArrow)"/>
+
+<rect x="210" y="440" width="480" height="90" class="cell" fill="#fde2e2"/>
+<text x="450" y="495" class="label" text-anchor="middle">Criar processo</text>
+
+<line x1="450" y1="530" x2="450" y2="585" stroke="#b91c1c" stroke-width="6" marker-end="url(#redArrow)"/>
+
+<rect x="210" y="600" width="480" height="90" class="cell" fill="#ffe0c7"/>
+<text x="450" y="655" class="label" text-anchor="middle">Executar programa</text>
+
+<line x1="450" y1="690" x2="450" y2="745" stroke="#b91c1c" stroke-width="6" marker-end="url(#redArrow)"/>
+
+<rect x="210" y="760" width="480" height="90" class="cell" fill="#fff1b8"/>
+<text x="450" y="815" class="label" text-anchor="middle">Gerar HTML</text>
+
+<line x1="450" y1="850" x2="450" y2="905" stroke="#b91c1c" stroke-width="6" marker-end="url(#redArrow)"/>
+
+<rect x="210" y="920" width="480" height="90" class="cell" fill="#eadcf7"/>
+<text x="450" y="975" class="label" text-anchor="middle">Encerrar processo</text>
+
+<path d="M210 965 C90 965 90 325 195 325" fill="none" stroke="#b91c1c" stroke-width="5" marker-end="url(#redArrow)"/>
+<text x="95" y="650" class="note" fill="#b91c1c" transform="rotate(-90 95 650)">Repete a cada requisição</text>
+
+<!-- Servlet -->
+<text x="1350" y="195" class="heading" text-anchor="middle">Servlet</text>
+<text x="1350" y="235" class="small" text-anchor="middle">O componente permanece carregado e reutilizável</text>
+
+<rect x="1110" y="280" width="480" height="80" class="cell" fill="#d9f5df"/>
+<text x="1350" y="330" class="label" text-anchor="middle">Servidor inicia</text>
+
+<line x1="1350" y1="360" x2="1350" y2="405" stroke="#15803d" stroke-width="6" marker-end="url(#greenArrow)"/>
+
+<rect x="1110" y="420" width="480" height="80" class="cell" fill="#dcecff"/>
+<text x="1350" y="470" class="label" text-anchor="middle">Carrega Servlet</text>
+
+<line x1="1350" y1="500" x2="1350" y2="545" stroke="#15803d" stroke-width="6" marker-end="url(#greenArrow)"/>
+
+<rect x="1110" y="560" width="480" height="80" class="cell" fill="#eadcf7"/>
+<text x="1350" y="610" class="label" text-anchor="middle">Espera requisições</text>
+
+<line x1="1350" y1="640" x2="1350" y2="685" stroke="#2563eb" stroke-width="6" marker-end="url(#blueArrow)"/>
+
+<rect x="1110" y="700" width="480" height="80" class="cell" fill="#fff1b8"/>
+<text x="1350" y="750" class="label" text-anchor="middle">Recebe requisição</text>
+
+<line x1="1350" y1="780" x2="1350" y2="825" stroke="#2563eb" stroke-width="6" marker-end="url(#blueArrow)"/>
+
+<rect x="1110" y="840" width="480" height="80" class="cell" fill="#ffe0c7"/>
+<text x="1350" y="890" class="label" text-anchor="middle">Processa e responde</text>
+
+<path d="M1590 880 C1710 880 1710 600 1605 600" fill="none" stroke="#15803d" stroke-width="5" marker-end="url(#greenArrow)"/>
+<text x="1710" y="745" class="note" fill="#15803d" transform="rotate(90 1710 745)">Continua aguardando</text>
+
+<!-- rodapé -->
+<rect x="250" y="1030" width="1300" height="50" class="cell" fill="#f3f4f6"/>
+<text x="900" y="1063" class="small" text-anchor="middle">
+CGI enfatiza isolamento por processo; Servlet enfatiza reutilização do componente dentro do servidor.
+</text>
+</svg>

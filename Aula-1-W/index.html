@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title><span class="lecture_placeholder"></title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css">
+  <link rel="stylesheet" href="css/mine.css">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+
+
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <div id="header-template">
+    <a href="https://unisal.br/">
+      <img src="img/logo_unisal.png" alt="Logo">
+    </a>
+    <h1>Aula &nbsp; <span id="aula_num_placeholder"></span> &nbsp; - &nbsp; <span class="lecture_placeholder"></span>
+      &nbsp; - &nbsp; <span class="lecture_subject_placeholder"></span></h1>
+  </div>
+
+  <!-- Rodapé -->
+  <div id="footer-template">
+    UNISAL - São José, Campinas - &nbsp; <span id="year-placeholder"></span>
+  </div>
+
+  <!-- Slides -->
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <a href="https://unisal.br/">
+          <img src="img/logo_unisal.png" alt="logo unisal"
+            style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+        </a>
+        <h2><span class="lecture_placeholder"></h2>
+        <h3><span class="lecture_subject_placeholder"></span></h3>
+        <p>
+          <small>Prof. Me. Gustavo Ferreira Palma</small>
+        </p>
+      </section>
+
+      <section>
+        <section>
+          <h2>Quem Sou eu?</h2>
+          <h4>Formação Acadêmica</h4>
+          <ul>
+            <li>Técnico em Informática - Etec Waldyr Duron Júnior</li>
+            <li>Tecnólogo em Análise e Desenvolvimento de Sistemas - FATEC Ourinhos</li>
+            <li>Especialista Em Eletrônica Embarcada - UNISAL</li>
+            <li>Mestre em Inteligência Computacional Aplicada - UTFPR</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Experiência Profissional</h4>
+          <ul>
+            <li>Analista de Tecnologia - Chiptronic Eletrônica do Brasil (2011-2019)</li>
+            <li>Professor de Graduação - Eduvale Avaré (2017-2019)</li>
+            <li>Analista de Desenvolvimento - Stoneridge Brasil (2019-2020)</li>
+            <li>Consultor Tecnológico - Instituto de Pesquisas Eldorado (2020)</li>
+            <li>Professor de Graduação e Pós-Graduação - UNISAL (2023)</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <h1>Quem São Vocês?</h1>
+      </section>
+
+      <section>
+        <h2>O que Vamos Estudar?</h2>
+
+        <ul>
+          <li>Desenvolvimento de Aplicações Web</li>
+          <ul>
+            <li>Desenvolvimento Backend utilizando Spring</li>
+            <li>Desenvolvimento de APIs para integração de sistemas</li>
+            <li>Desenvolvimento de arquiteturas de sistemas desacopladoss</li>
+          </ul>
+          <li>Desenvolvimento de Aplicaçoes Mobile</li>
+          <ul>
+            <li>Sistemas Operacionais Móveis</li>
+            <li>Kit de Sensores nos dispositivos</li>
+            <li>Câmera</li>
+            <li>Mapas e GPS</li>
+            <li>Conectividade</li>
+          </ul>
+          <li>Entre outros...</li>
+        </ul>
+      </section>
+
+      <!-- <section>
+        <h2>Bibliografia Básica</h2>
+        <ul>
+          <li>Conci, Aura. Computação Gráfica: Teoria e Prática - Geração De Imagens - Volume 1. Contribuição de Cristina Nader Vasconcelos e Eduardo Azevedo, Alta Books, 2021.</li>
+          <li>Barelli, Felipe. Introdução à visão computacional: uma abordagem prática com Python e OpenCV. Casa do Código, 2018.</li>
+        </ul>
+      </section> -->s
+
+      <section>
+        <section>
+          <h2>Métodos de Avaliação</h2>
+          <ul>
+            <li>Majoritariamente avaliações práticas;</li>
+            <li>Se/Quando Necessário, Avaliação escrita;</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Combinados de Ouro</h2>
+          <ul>
+            <li>Nosso Curso é PRESENCIAL, então para ter presença é preciso estar PRESENTE;</li>
+            <li>Abono de Faltas, somente com atestado e casos previstos;</li>
+            <li>Nossa Sala de Aula é um ambiente seguro, fiquem a vontade para perguntar, tirar dúvidas, fazer
+              experimentos, é um prazer ajudar e contribuir para o crescimento de cada um de vocês;</li>
+            <li>Evitem Conversas Paralelas, por mais que pareça que temos muito tempo, nosso tempo em sala de aula é
+              curto, aproveitem;</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Combinados de Ouro</h2>
+          <ul>
+            <li>Se tivermos alguma atividade manuscrita, caprichem na caligrafia, não sou farmacêutico, se eu não
+              conseguir ler, não tem nota;</li>
+            <li>Lembrem-se em toda e qualquer atividade que desenvolvermos, eu sei que o Chat-GPT sabe como resolver,
+              nesse momento quero saber de vocês, não tenham medo de errar, de testar, de experimentar, perguntem se
+              necessário, desenvolvam suas capacidades.</li>
+            <li>Guardem as conversas para momentos extra-classe, todos aqui são amigos, mas durante as aulas, o
+              importante é ouvir, perguntar e
+              interagir, com o professor.</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <h1>Dúvidas?</h1>
+      </section>
+
+      <section>
+        <h1>O que são aplicações Web?</h1>
+      </section>
+
+      <section>
+        <h2>O que são aplicações Web?</h2>
+        <ul>
+          <li>Aplicações Web são softwares executados por meio da Internet ou de uma rede local, acessado normalmente
+            por um navegador ou outro cliente HTTP(S).;</li>
+
+          <li>As principais Caracteristicas são:</li>
+          <ul>
+            <li>Cliente-Servidor</li>
+            <li>Comunicação HTTP, ou ainda na sua versão segura (HTTPS)</li>
+            <li>São independentes do sistema operacional</li>
+            <li>Acesso Remoto</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <ul>
+          <li>CERN: Renomado centro de pesquisa, lar do Grande Colisor de Adrons, na época tinha um problema, trocar
+            informações entre diferentes sites, utilizando diferentes arquiteturas de computadores e sistemas
+            operacionais;</li>
+          <li>Tim Berners-Lee: Considerado por muitos o "Pai da Internet", é o criador do HTML, linguagem de escrita de
+            páginas, o fundamento da web-moderna;</li>
+          <li>HTML: Linguagem de marcação de texto utilizada para formatar páginas e entregar conteúdos de forma visual
+            simplificada;</li>
+          <li>HTTP: Protocolo para trasferência de hipertexto, reposnável por transmitir arquivos através da Internet
+          </li>
+          <li>URL: Padrão utilizado para descrever endereços na internet</li>
+        </ul>
+
+        <p>Primeiro objetivo aqui, compartilhar documentos científicos</p>
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <img src="img/modelo_cliente_servidor_http_html.svg" style="width: 50%;">
+        <p>O foco aqui é a entrega de arquivos/informações, não existe qualquer programação ou dinamismo no processo</p>
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <p>Página HTML simples</p>
+        <pre>
+          <code data-line-numbers="" data-trim="" data-noescape="">
+html&gt;
+&lt;h1&gt;Minha Página&lt;/h1&gt;
+&lt;/html&gt;
+          </code>
+        </pre>
+        <p>Sempre retorna exatamente o mesmo conteúdo.</p>
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <ul>
+          <li>Esse modelo inicial apresentado é muito eficiente parar disponibilizar dados científicos, que não mudam
+            tanto, contudo quando essa solução foi levada para o mercado "civil", alguns problemas começaram a ser
+            notados:</li>
+          <li>Imagine um site de notícias.</li>
+          <ul>
+            <li>Como atualizar centenas de páginas?</li>
+            <li>Como mostrar usuários diferentes?</li>
+            <li>Como acessar bancos ded dados?</li>
+          </ul>
+          <li>Nesse modelo, nada disso é possível</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <ul>
+          <li>Na tentativa de resolver esses problemas, surge o CGI (Common Gateway Interface), o primeiro mecanismo
+            capaz de gerar páginas com conteúdos dinâmicos</li>
+        </ul>
+        <img src="img/fluxo_browser_servidor_programa_html.svg" style="width: 50%;">
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <ul>
+          <li>Perceba, que o CGI não definie uma linguagem de programação, ou ainda uma tecnologia específica;</li>
+          <li>O CGI, foca em definir <b>como</b> os componentes vão se comunicar, e não as tecnologias, de linguagem, ou
+            mesmo banco de dados envolvidos</li>
+          <li>O CGI apenas define como o servidor executa um programa e recebe sua saída.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <img src="img/servidor_web_programas_c_perl_python.svg" style="width: 60%;">
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <ul>
+          <li>Problemas do CGI:</li>
+          <ul>
+            <li>novo processo</li>
+            <li>lento</li>
+            <li>alto consumo de memória</li>
+            <li>difícil manutenção</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <ul>
+          <li>Para tentar resolver o problema do CGI, a Sun Microsystems, desenvolve então uma tecnologia capaz de
+            contornar as limitações do CGI.</li>
+          <li>Assim surgem os Servlets que, ao contrário dos softwares CGI, se mantém executando, e para cada nova
+            requisição uma Thread é lançada, tornando-o um substituo eficiente aos ambientes CGI</li>
+          <li>A grande diferença aqui é que os servlets propostos pela Sun, se aplicavam unica e exclusivamente ao Java
+          </li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <img src="img/cgi_vs_servlet.svg" style="width: 60%;" />
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <ul>
+          <li>Para gerenciar/controlar a execuções dos Servlets, é necessário um <b>Servlet Container</b>, assim surge o
+            <b>Tomcat</b> capaz de:
+          </li>
+          <ul>
+            <li>receber HTTP;</li>
+            <li>interpretar a requisição;</li>
+            <li>localizar o Servlet correto;</li>
+            <li>criar objetos Request e Response;</li>
+            <li>chamar o método adequado;</li>
+            <li>devolver a resposta.</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <ul>
+          <li>Na solução dos servlets tudo que o desenvolvedor precisava fazer era:</li>
+        </ul>
+        <pre>
+          <code data-line-numbers="" data-noescape="" data-trim="">
+public class ProdutoServlet extends HttpServlet {
+
+}
+          </code>
+        </pre>
+        <ul>
+          <li>Todo o resto do trabalho fica a cargo do Tomcat</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <img src="img/ciclo_vida_servlet.svg" height="80%">
+      </section>
+
+      <section>
+        <h2>O que são aplicações web - Como tudo começou?</h2>
+        <ul>
+          <li>Essa estratégia resolveu muitos problemas de desempenho e o ciclo de vida proposto e implementado pelos
+            Servlets é utilizado até hoje pelas aplicações Java Web</li>
+          <li>Contudo o Servlets ainda não conseguiram resolver o problema de misturar códigos de regras de negócio, com
+            códigos de exibição de páginas, os softwares ainda misturavam HTML com lógica</li>
+          <li>E na Tenttiva de resolver esse problema surge uma nova tecnlogia, o JSP (Java Server Pages), onde ao invés
+            de escrevermos HTML na Lógica Java, podíamos escrever Java no HTML</li>
+          <li>Uma coisa muito parecida aconteceu com outra linguagem de programação o PHP</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Aplicações Web Modernas</h1>
+      </section>
+
+      <section>
+        <h2>Aplicações Web Modernas - O Modelo MVC</h2>
+        <ul>
+          <li>Desde o início das aplicações web, um dos principais "problemas", ou ainda limitantes para a organização,
+            ou mesmo arquitetura das aplicações é a "mistura" de regras de negócio e regras para construção de
+            aplicações;</li>
+          <li>Muito difundido com a popularização dos frameworks mobile, o modlo de desenvolvimento MVC, a aplicação em
+            camadas conceituais, definindo como as interações como o usuário, criação de interfaces, e regras de negócio
+            devem acontecer, tornando o software mais organizado menos modular e mais fácil para manter;</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aplicações Web Modernas - O Modelo MVC</h2>
+        <img src="img/mvc_componentes_jsf.svg" style="width: 60%;">
+      </section>
+
+      <section>
+        <h2>Aplicações Web Modernas - O Modelo MVC</h2>
+        <ul>
+          <li>Uma tecnologia de desenvolvimento Java para Web que praticamente obrigava o desenvolvedor a aplicar os
+            conceitos de MVC foi o JSF (Java Server Faces)</li>
+          <li>O JSF é caracterizado por aplicações contextualizadas, com domínio de dados separado dos controladores de
+            tela, acima do modelo por arquitetura de controle</li>
+          <li>O JSF é marcado por blibliotecas de componentes ricos, as chamadas <i><b>Rich Faces</b></i>, Interfaces
+            com componentes ricos, altamente intuitivos e com recursos que permitiam a customização máxima dos usuários,
+            como principais frameworks temos o Primefaces e o Bootsfaces
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aplicações Web Modernas - O Modelo MVC</h2>
+        <ul>
+          <li>Mesmo com tantas melhorias, o modelo de trabalho do JSF estava longe de ser perfeito, ou ainda mesmo
+            equilibrado:</li>
+          <ul>
+            <li>Devido a sua estrutura de criação as páginas construídas tinham muitos códigos, as páginas em si, não
+              eram facilmente reaproveitadas;</li>
+            <li>Os controladores, eram responsáveis por gerenciar diversos estados para as páginas;</li>
+            <li>O modelo de construção baseado em estados, concentrava muito processamento no servidor, o que por vezes,
+              sobrecarregava os servidor, e o tornava um pouco lento, em alguns cenários específicos;</li>
+            <li>Inicialmente o modelo JSF não foi pensado para ter um bom desempenho em smartphones;</li>
+            <li>As mudanças no modo como usamos a internet contribuíram para a obsolescência dessa tecnologia,
+              aplicações em smartphones, tablets e TVs exigem uma interface gráfica mais versátil e desacoplada dos
+              controladores</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aplicações Web Modernas - Os Serviços REST</h2>
+        <ul>
+          <li>A estratégia então escolhida para resolver esse problema são os serviços REST (Representational State
+            Transfer), que carrega uma ideia simples porém extramente eficiente;</li>
+          <li>Com o modelo REST, as aplicações passam a não mais criar ou reenderizar telas, eles passam a simplesmente
+            entregar dados, e nesses dados temos as representações de estados, indicativos e dados úteis aos usuários
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aplicações Web Modernas - Os Serviços REST</h2>
+        <img src="img/servidor_tradicional_vs_moderno_html_json.svg" style="width: 60%;">
+      </section>
+
+      <section>
+        <h2>Aplicações Web Modernas - Os Serviços REST</h2>
+        <ul>
+          <li>Os dados podem vir do servidor em diferentes tipos de "Empacotamento":</li>
+          <ul>
+            <li>JSON - Javascript Object Notation</li>
+          </ul>
+        </ul>
+        <pre>
+          <code data-line-numbers="" data-trim="" data-noescape="">
+{
+ "id":10,
+ "nome":"Notebook",
+ "preco":3200
+}
+          </code>
+        </pre>
+        <ul>
+          <ul>
+            <li>XML - Extensible Markup Language</li>
+          </ul>
+        </ul>
+        <pre>
+          <code data-line-numbers="" data-trim="" data-noescape="">
+&lt;produto&gt;
+    &lt;id&gt;10&lt;/id&gt;
+    &lt;nome&gt;Notebook&lt;/nome&gt;
+    &lt;preco&gt;3200&lt;/preco&gt;
+&lt;/produto&gt;           
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>Aplicações Web Modernas - Os Serviços REST</h2>
+        <ul>
+          <li>Com isso pode surgir uma dúvida, Quem ou o quê pode consumir os serviços REST?;</li>
+          <li>Quaisquer applicações desenvolvidas em práticamente quaquer linguagem, basta que ela seja capaz de
+            executar uma requisição HTTP(S)</li>
+          <li>Dessa forma se consolida a separação entre <b>back-end</b> e <b>front-end</b>, repare que ela se consolida
+            aqui, o conceito já existia antes</li>
+          <li>Outro ponto importante para defirnir aqui é o termo API (Application Programming Interface), é uma chamada
+            com protocolo e dados bem definidos que permitem que aplicações interajam entre si</li>
+          <li>Tenha sempre em mente: API não é sinônimo pra REST, REST não é sinônimo de API, e tampouco API significa
+            internet</li>
+          <li>REST é mais um tipo de API dentre tantos outros existentes</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aplicações Web Modernas - Os Serviços REST</h2>
+        <ul>
+          <li>De forma simplificada o REST, utiliza métodos do protocolo HTTP para implementar seus serviços e chamadas
+            de API:</li>
+          <ul>
+            <li>GET: Solicita ou consulta informações existentes no servidor, sem modificar os dados.</li>
+            <li>POST: Envia novos dados ao servidor, normalmente para criar um novo recurso.</li>
+            <li>PUT: Atualiza ou substitui completamente um recurso existente.</li>
+            <li>DELETE: Remove um recurso existente do servidor.</li>
+          </ul>
+          <li>Lembrando que esses não são todos os métodos são apenas os métodos principais</li>
+        </ul>
+      </section>
+
+
+
+      <section>
+        <h1>Qual técnologia Vamos usar</h1>
+      </section>
+
+      <section>
+        <h2>Qual técnologia Vamos usar</h2>
+        <ul>
+          <li>Durante as aulas vamos utilizar um framework para desenvolvimento web Chamado Spring;</li>
+          <li>O Spring Boot atualmente é um padrão de mercado, utilizado nos mais diversos setores desde o setor
+            financeiro até projetos de automação, internet das coisas e atualizações remotas</li>
+          <li>Se, fossemos optar por desenvolver applicações sem um framework como o Spring teríamos:</li>
+          <ul>
+            <li>tarefas extensas de configuração de ambientes</li>
+            <li>uso intenso de arquivos XML</li>
+            <li>Tomcat para gerenciar</li>
+            <li>Uma série de dependências de bibliotecas para gerenciar manualmente</li>
+          </ul>
+          <li>Já utlizando o Spring, as tarefas de configuração são minimas, e o foco para o desenvolvedor fica quase
+            que inteiramente no desenvolvimento das regras de negócio, todos os códigos repetitivos e massantes são
+            gerados de forma automática baseados nos requisitos</li>
+        </ul>
+      </section>
+
+
+
+      <section>
+        <h1>OBRIGADO!</h1>
+        <p>Podem me encontrar aqui:</p>
+        <ul>
+          <li>gustavo.palma@unisal.edu.br</li>
+          <li>www.gustavopalma.com.br</li>
+        </ul>
+      </section>
+
+
+    </div>
+  </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="../../../dist/reveal.js"></script>
+
+  <script>
+    let dataLabels = [];
+    let dataValues = [];
+    let speedups = [];
+    let chart;
+
+    // Referências
+    const addBtn = document.getElementById('add-btn');
+    const plotBtn = document.getElementById('plot-btn');
+    const tableBody = document.querySelector('#data-table tbody');
+    const labelInput = document.getElementById('label');
+    const valueInput = document.getElementById('value');
+
+    function createWorldMarketShare() {
+      const ctx = document.getElementById('worldMarketShare');
+
+      new Chart(ctx, {
+        type: 'bar',
+
+        data: {
+          labels: [
+            'Android',
+            'iOS',
+            'Outros'
+          ],
+
+          datasets: [{
+            label: 'Participação (%)',
+            data: [68.00, 31.94, 0.06],
+
+            backgroundColor: [
+              '#3DDC84',
+              '#999999',
+              '#607D8B'
+            ],
+
+            borderColor: [
+              '#2E8B57',
+              '#555555',
+              '#455A64'
+            ],
+
+            borderWidth: 2
+          }]
+        },
+
+        options: {
+
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false
+            },
+
+            title: {
+              display: true,
+              text: 'Participação Mundial dos Sistemas Operacionais Móveis'
+            }
+          },
+
+          scales: {
+
+            y: {
+
+              beginAtZero: true,
+
+              max: 100,
+
+              title: {
+                display: true,
+                text: 'Participação (%)'
+              }
+            }
+          }
+        }
+      });
+    }
+
+
+    function createMarketShare() {
+      const ctx = document.getElementById('marketShare');
+
+      new Chart(ctx, {
+        type: 'bar',
+
+        data: {
+          labels: [
+            'Android',
+            'iOS'
+          ],
+
+          datasets: [{
+            label: 'Participação (%)',
+            data: [78, 22],
+
+            backgroundColor: [
+              '#3DDC84',
+              '#999999'
+            ],
+
+            borderColor: [
+              '#2E8B57',
+              '#555555'
+            ],
+
+            borderWidth: 2
+          }]
+        },
+
+        options: {
+
+          responsive: true,
+          maintainAspectRatio: false,
+
+          plugins: {
+            legend: {
+              display: false
+            },
+
+            title: {
+              display: true,
+              text: 'Participação dos Sistemas Operacionais Móveis no Brasil'
+            }
+          },
+
+          scales: {
+
+            y: {
+
+              beginAtZero: true,
+
+              max: 100,
+
+              title: {
+                display: true,
+                text: 'Participação (%)'
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Função para atualizar o gráfico
+    function updateChart() {
+      if (chart) chart.destroy();
+
+      const ctx = document.getElementById('lineChart').getContext('2d');
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: dataLabels,
+          datasets: [{
+            label: 'Cores',
+            data: dataLabels,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            fill: true,
+            tension: 0.3
+          }, {
+            label: 'Speedup',
+            data: speedups,
+            borderColor: 'rgba(179, 4, 4, 1)',
+            backgroundColor: 'rgba(179, 4, 4, 0.2)',
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: true } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    }
+
+    if (addBtn != null) {
+      // Adicionar linha à tabela
+      addBtn.addEventListener('click', () => {
+        const label = labelInput.value.trim();
+        const value = parseFloat(valueInput.value);
+
+        if (!label || isNaN(value)) return;
+
+        var idx = dataValues.length;
+        console.log(idx);
+        var speedup = 1;
+        if (idx != 0) {
+          speedup = dataValues[0] / value;
+          console.log(dataValues[0] + "/" + value);
+        }
+
+        dataLabels.push(label);
+        dataValues.push(value);
+        speedups.push(speedup);
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+    <td>${label}</td>
+    <td>${value}</td>
+    <td>${speedup}</td>
+  `;
+        tableBody.appendChild(row);
+
+        labelInput.value = '';
+        valueInput.value = '';
+      });
+    }
+    // Plotar gráfico ao clicar no botão
+    plotBtn.addEventListener('click', () => {
+      updateChart();
+    });
+  </script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script>
+    const iframe = document.getElementById('terminal');
+    if (iframe != null) {
+      iframe.onload = () => {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const style = doc.createElement('style');
+        style.innerHTML = `
+      .xterm {
+        font-size: 20px !important;
+        line-height: 1.2 !important;
+      }
+    `;
+        doc.head.appendChild(style);
+      };
+    }
+  </script>
+  <script>
+    Reveal.on('ready', event => {
+      const headerTemplate = document.getElementById('header-template');
+      const footerTemplate = document.getElementById('footer-template');
+
+      document.querySelectorAll('.slide-background').forEach(backgroundDiv => {
+        if (headerTemplate) {
+          backgroundDiv.appendChild(headerTemplate.cloneNode(true));
+        }
+        if (footerTemplate) {
+          backgroundDiv.appendChild(footerTemplate.cloneNode(true));
+        }
+      });
+
+      const nomeDisciplina = "Desenvolvimento Web e Mobile";
+      const assuntoAula = "Desenvolvimento Web e Mobile -Web - Aula Inicial"
+      const aulaNum = '1';
+      const currentDate = new Date();
+
+      // Get the full four-digit year
+      const currentYear = " " + currentDate.getFullYear(); // e.g., 2026
+
+      // Find the HTML element by its ID and set its text content to the current year
+      document.getElementById('year-placeholder').textContent = "\  " + currentYear;
+      var elems = document.getElementsByClassName('lecture_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = nomeDisciplina;
+      }
+      document.title = nomeDisciplina;
+      document.getElementById('aula_num_placeholder').textContent = aulaNum
+      elems = document.getElementsByClassName('lecture_subject_placeholder');
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].textContent = assuntoAula;
+      }
+      createWorldMarketShare();
+      createMarketShare();
+    });
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'slide',
+      center: true,
+      width: "100%",
+      height: "100%",
+      margin: 0,
+      controls: true,
+      controlsBackArrows: 'faded',
+      progress: true,
+      plugins: [RevealHighlight, RevealZoom],
+    });
+  </script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</body>
+
+</html>

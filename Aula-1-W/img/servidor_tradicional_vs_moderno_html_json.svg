@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000">
+<defs>
+<style>
+.title{font:700 44px Arial,sans-serif;fill:#6b21a8}
+.subtitle{font:500 24px Arial,sans-serif;fill:#374151}
+.heading{font:700 34px Arial,sans-serif;fill:#1f2937}
+.label{font:700 28px Arial,sans-serif;fill:#1f2937}
+.small{font:500 21px Arial,sans-serif;fill:#374151}
+.code{font:700 26px Consolas,monospace;fill:#1f2937}
+.note{font:700 22px Arial,sans-serif}
+.cell{stroke:#1f2937;stroke-width:3;rx:20;ry:20}
+</style>
+<marker id="blueArrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+<path d="M0,0 L14,7 L0,14 z" fill="#2563eb"/></marker>
+<marker id="greenArrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+<path d="M0,0 L14,7 L0,14 z" fill="#15803d"/></marker>
+</defs>
+
+<rect width="1800" height="1000" fill="#fff"/>
+<text x="70" y="80" class="title">Servidor tradicional vs servidor moderno</text>
+<text x="70" y="125" class="subtitle">A mudança principal está no tipo de resposta entregue ao cliente.</text>
+
+<line x1="900" y1="170" x2="900" y2="900" stroke="#d1d5db" stroke-width="4"/>
+
+<!-- Antigo -->
+<text x="450" y="205" class="heading" text-anchor="middle">Servidor tradicional</text>
+<text x="450" y="245" class="small" text-anchor="middle">O servidor monta e entrega a interface pronta</text>
+
+<rect x="235" y="300" width="430" height="120" class="cell" fill="#dcecff"/>
+<text x="450" y="350" class="label" text-anchor="middle">Cliente</text>
+<text x="450" y="388" class="small" text-anchor="middle">Browser solicita uma página</text>
+
+<line x1="450" y1="420" x2="450" y2="515" stroke="#2563eb" stroke-width="6" marker-end="url(#blueArrow)"/>
+<text x="500" y="475" class="note" fill="#2563eb">Requisição HTTP</text>
+
+<rect x="235" y="530" width="430" height="120" class="cell" fill="#d9f5df"/>
+<text x="450" y="580" class="label" text-anchor="middle">Servidor</text>
+<text x="450" y="618" class="small" text-anchor="middle">Processa e monta a página</text>
+
+<line x1="450" y1="650" x2="450" y2="745" stroke="#15803d" stroke-width="6" marker-end="url(#greenArrow)"/>
+<text x="500" y="705" class="note" fill="#15803d">Resposta</text>
+
+<rect x="235" y="760" width="430" height="120" class="cell" fill="#fff1b8"/>
+<text x="450" y="810" class="label" text-anchor="middle">HTML</text>
+<text x="450" y="850" class="code" text-anchor="middle">&lt;html&gt; ... &lt;/html&gt;</text>
+
+<rect x="160" y="915" width="580" height="55" class="cell" fill="#f3f4f6"/>
+<text x="450" y="950" class="small" text-anchor="middle">Interface e dados chegam juntos ao navegador</text>
+
+<!-- Moderno -->
+<text x="1350" y="205" class="heading" text-anchor="middle">Servidor moderno</text>
+<text x="1350" y="245" class="small" text-anchor="middle">O servidor entrega dados; o cliente monta a interface</text>
+
+<rect x="1135" y="300" width="430" height="120" class="cell" fill="#dcecff"/>
+<text x="1350" y="350" class="label" text-anchor="middle">Cliente</text>
+<text x="1350" y="388" class="small" text-anchor="middle">Web, mobile ou outro sistema</text>
+
+<line x1="1350" y1="420" x2="1350" y2="515" stroke="#2563eb" stroke-width="6" marker-end="url(#blueArrow)"/>
+<text x="1400" y="475" class="note" fill="#2563eb">Requisição HTTP</text>
+
+<rect x="1135" y="530" width="430" height="120" class="cell" fill="#d9f5df"/>
+<text x="1350" y="580" class="label" text-anchor="middle">Servidor / API</text>
+<text x="1350" y="618" class="small" text-anchor="middle">Processa e fornece os dados</text>
+
+<line x1="1350" y1="650" x2="1350" y2="745" stroke="#15803d" stroke-width="6" marker-end="url(#greenArrow)"/>
+<text x="1400" y="705" class="note" fill="#15803d">Resposta</text>
+
+<rect x="1135" y="760" width="430" height="120" class="cell" fill="#ffe0c7"/>
+<text x="1350" y="810" class="label" text-anchor="middle">JSON</text>
+<text x="1350" y="850" class="code" text-anchor="middle">{ "nome": "Ana" }</text>
+
+<rect x="1060" y="915" width="580" height="55" class="cell" fill="#f3f4f6"/>
+<text x="1350" y="950" class="small" text-anchor="middle">Dados desacoplados da interface do usuário</text>
+</svg>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1500"
+   height="1100"
+   viewBox="0 0 1500 1100"
+   version="1.1"
+   id="svg25"
+   sodipodi:docname="fluxo_browser_servidor_programa_html.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview25"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.74181818"
+     inkscape:cx="784.55882"
+     inkscape:cy="470.46569"
+     inkscape:window-width="2560"
+     inkscape:window-height="1024"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg25" />
+  <defs
+     id="defs3">
+    <style
+       id="style1">
+.title{font:700 42px Arial,sans-serif;fill:#6b21a8}
+.subtitle{font:500 24px Arial,sans-serif;fill:#374151}
+.label{font:700 30px Arial,sans-serif;fill:#1f2937}
+.code{font:700 24px Consolas,monospace;fill:#1f2937}
+.small{font:500 21px Arial,sans-serif;fill:#374151}
+.note{font:700 22px Arial,sans-serif}
+.cell{stroke:#1f2937;stroke-width:3;rx:18;ry:18}
+.blue{fill:#2563eb}.green{fill:#15803d}.orange{fill:#c2410c}.purple{fill:#6b21a8}.red{fill:#b91c1c}
+</style>
+    <marker
+       id="ab"
+       markerWidth="14"
+       markerHeight="14"
+       refX="11"
+       refY="7"
+       orient="auto">
+      <path
+         d="M0,0 L14,7 L0,14 z"
+         fill="#2563eb"
+         id="path1" />
+    </marker>
+    <marker
+       id="ag"
+       markerWidth="14"
+       markerHeight="14"
+       refX="11"
+       refY="7"
+       orient="auto">
+      <path
+         d="M0,0 L14,7 L0,14 z"
+         fill="#15803d"
+         id="path2" />
+    </marker>
+    <marker
+       id="ao"
+       markerWidth="14"
+       markerHeight="14"
+       refX="11"
+       refY="7"
+       orient="auto">
+      <path
+         d="M0,0 L14,7 L0,14 z"
+         fill="#c2410c"
+         id="path3" />
+    </marker>
+  </defs>
+  <rect
+     width="1500"
+     height="1100"
+     fill="#fff"
+     id="rect3" />
+  <text
+     x="60"
+     y="80"
+     class="title"
+     id="text3">Geração dinâmica de uma página Web</text>
+  <text
+     x="60"
+     y="125"
+     class="subtitle"
+     id="text4">O servidor executa um programa, gera HTML e devolve o resultado ao navegador.</text>
+  <!-- Browser inicial -->
+  <rect
+     x="470"
+     y="175"
+     width="560"
+     height="135"
+     class="cell"
+     fill="#dcecff"
+     id="rect4" />
+  <text
+     x="750"
+     y="230"
+     class="label"
+     text-anchor="middle"
+     id="text5">Browser</text>
+  <text
+     x="750"
+     y="275"
+     class="small"
+     text-anchor="middle"
+     id="text6">Envia uma requisição para o servidor</text>
+  <line
+     x1="750"
+     y1="310"
+     x2="750"
+     y2="400"
+     stroke="#2563eb"
+     stroke-width="6"
+     marker-end="url(#ab)"
+     id="line6" />
+  <text
+     x="800"
+     y="365"
+     class="note blue"
+     id="text7">Requisição HTTP</text>
+  <!-- Servidor web -->
+  <rect
+     x="470"
+     y="415"
+     width="560"
+     height="135"
+     class="cell"
+     fill="#d9f5df"
+     id="rect7" />
+  <text
+     x="750"
+     y="470"
+     class="label"
+     text-anchor="middle"
+     id="text8">Servidor Web</text>
+  <text
+     x="750"
+     y="515"
+     class="small"
+     text-anchor="middle"
+     id="text9">Recebe a requisição e aciona a aplicação</text>
+  <line
+     x1="750"
+     y1="550"
+     x2="750"
+     y2="640"
+     stroke="#c2410c"
+     stroke-width="6"
+     marker-end="url(#ao)"
+     id="line9" />
+  <text
+     x="800"
+     y="605"
+     class="note orange"
+     id="text10">Execução</text>
+  <!-- Programa -->
+  <rect
+     x="470"
+     y="655"
+     width="560"
+     height="135"
+     class="cell"
+     fill="#eadcf7"
+     id="rect10" />
+  <text
+     x="750"
+     y="710"
+     class="label"
+     text-anchor="middle"
+     id="text11">Programa</text>
+  <text
+     x="750"
+     y="755"
+     class="small"
+     text-anchor="middle"
+     id="text12">Processa dados e monta o conteúdo da página</text>
+  <line
+     x1="750"
+     y1="790"
+     x2="750"
+     y2="880"
+     stroke="#15803d"
+     stroke-width="6"
+     marker-end="url(#ag)"
+     id="line12" />
+  <text
+     x="800"
+     y="845"
+     class="note green"
+     id="text13">Geração da resposta</text>
+  <!-- HTML -->
+  <rect
+     x="470"
+     y="895"
+     width="560"
+     height="135"
+     class="cell"
+     fill="#ffe0c7"
+     id="rect13" />
+  <text
+     x="750"
+     y="950"
+     class="label"
+     text-anchor="middle"
+     id="text14">HTML</text>
+  <text
+     x="750"
+     y="995"
+     class="code"
+     text-anchor="middle"
+     id="text15">&lt;html&gt; ... &lt;/html&gt;</text>
+  <!-- Retorno ao Browser -->
+  <path
+     d="M1030 963 C1240 963 1275 780 1275 600 C1275 365 1180 243 1045 243"
+     fill="none"
+     stroke="#15803d"
+     stroke-width="6"
+     marker-end="url(#ag)"
+     id="path15" />
+  <text
+     x="1364.5834"
+     y="341.07843"
+     class="note green"
+     text-anchor="middle"
+     id="text16"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:22px;line-height:normal;font-family:Arial, sans-serif">Resposta HTTP</text>
+  <text
+     x="1364.5834"
+     y="376.07843"
+     class="small"
+     text-anchor="middle"
+     id="text17"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:21px;line-height:normal;font-family:Arial, sans-serif">HTML retorna ao Browser</text>
+  <!-- Browser final -->
+  <rect
+     x="60"
+     y="895"
+     width="300"
+     height="135"
+     class="cell"
+     fill="#dcecff"
+     id="rect17" />
+  <text
+     x="210"
+     y="950"
+     class="label"
+     text-anchor="middle"
+     id="text18">Browser</text>
+  <text
+     x="210"
+     y="995"
+     class="small"
+     text-anchor="middle"
+     id="text19">Interpreta e exibe o HTML</text>
+  <path
+     d="M470 963 C430 963 405 963 375 963"
+     fill="none"
+     stroke="#2563eb"
+     stroke-width="6"
+     marker-end="url(#ab)"
+     id="path19" />
+  <!-- resumo -->
+  <rect
+     x="70"
+     y="390"
+     width="310"
+     height="250"
+     class="cell"
+     fill="#f3f4f6"
+     id="rect19" />
+  <text
+     x="225"
+     y="445"
+     class="note purple"
+     text-anchor="middle"
+     id="text20">Fluxo resumido</text>
+  <text
+     x="225"
+     y="496"
+     class="small"
+     text-anchor="middle"
+     id="text21"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:21px;line-height:normal;font-family:Arial, sans-serif">Browser</text>
+  <text
+     x="225"
+     y="526"
+     class="small"
+     text-anchor="middle"
+     id="text22"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:21px;line-height:normal;font-family:Arial, sans-serif">↓</text>
+  <text
+     x="225"
+     y="549"
+     class="small"
+     text-anchor="middle"
+     id="text23"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:21px;line-height:normal;font-family:Arial, sans-serif">Servidor → Programa</text>
+  <text
+     x="225"
+     y="574"
+     class="small"
+     text-anchor="middle"
+     id="text24"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:21px;line-height:normal;font-family:Arial, sans-serif">↓</text>
+  <text
+     x="225"
+     y="599"
+     class="small"
+     text-anchor="middle"
+     id="text25"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:21px;line-height:normal;font-family:Arial, sans-serif">HTML → Browser</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000">
+<defs>
+<style>
+.title{font:700 42px Arial,sans-serif;fill:#6b21a8}
+.subtitle{font:500 24px Arial,sans-serif;fill:#374151}
+.label{font:700 30px Arial,sans-serif;fill:#1f2937}
+.code{font:700 24px Consolas,monospace;fill:#1f2937}
+.small{font:500 21px Arial,sans-serif;fill:#374151}
+.note{font:700 22px Arial,sans-serif}
+.cell{stroke:#1f2937;stroke-width:3;rx:18;ry:18}
+.blue{fill:#2563eb}.green{fill:#15803d}.orange{fill:#c2410c}.purple{fill:#6b21a8}
+</style>
+<marker id="ab" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#2563eb"/></marker>
+<marker id="ag" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto"><path d="M0,0 L14,7 L0,14 z" fill="#15803d"/></marker>
+</defs>
+<rect width="1400" height="1000" fill="#fff"/>
+<text x="60" y="80" class="title">Modelo cliente-servidor</text>
+<text x="60" y="125" class="subtitle">O cliente solicita um recurso ao servidor utilizando o protocolo HTTP.</text>
+
+<rect x="420" y="180" width="560" height="170" class="cell" fill="#dcecff"/>
+<text x="700" y="245" class="label" text-anchor="middle">Cliente</text>
+<text x="700" y="295" class="small" text-anchor="middle">Navegador ou aplicação que envia a requisição</text>
+
+<line x1="700" y1="350" x2="700" y2="485" stroke="#2563eb" stroke-width="6" marker-end="url(#ab)"/>
+<rect x="550" y="395" width="300" height="65" class="cell" fill="#fff1b8"/>
+<text x="700" y="438" class="code" text-anchor="middle">HTTP</text>
+
+<rect x="420" y="500" width="560" height="170" class="cell" fill="#d9f5df"/>
+<text x="700" y="565" class="label" text-anchor="middle">Servidor</text>
+<text x="700" y="615" class="small" text-anchor="middle">Recebe a requisição, localiza o recurso e prepara a resposta</text>
+
+<line x1="700" y1="670" x2="700" y2="795" stroke="#15803d" stroke-width="6" marker-end="url(#ag)"/>
+<rect x="470" y="810" width="460" height="130" class="cell" fill="#ffe0c7"/>
+<text x="700" y="865" class="label" text-anchor="middle">Arquivo HTML</text>
+<text x="700" y="910" class="code" text-anchor="middle">index.html</text>
+
+<text x="1020" y="420" class="note blue">1. Requisição</text>
+<text x="1020" y="455" class="small">Exemplo: GET /index.html</text>
+<text x="1020" y="735" class="note green">2. Resposta</text>
+<text x="1020" y="770" class="small">O servidor devolve o conteúdo HTML</text>
+
+<rect x="80" y="410" width="280" height="165" class="cell" fill="#eadcf7"/>
+<text x="220" y="460" class="note purple" text-anchor="middle">Fluxo básico</text>
+<text x="220" y="505" class="small" text-anchor="middle">Cliente → HTTP →</text>
+<text x="220" y="540" class="small" text-anchor="middle">Servidor → HTML</text>
+</svg>

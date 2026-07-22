@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1600"
+   height="1000"
+   viewBox="0 0 1600 1000"
+   version="1.1"
+   id="svg27"
+   sodipodi:docname="servidor_web_programas_c_perl_python.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview27"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.816"
+     inkscape:cx="800.2451"
+     inkscape:cy="500"
+     inkscape:window-width="2560"
+     inkscape:window-height="1024"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg27" />
+  <defs
+     id="defs2">
+    <style
+       id="style1">
+.title{font:700 42px Arial,sans-serif;fill:#6b21a8}
+.subtitle{font:500 24px Arial,sans-serif;fill:#374151}
+.label{font:700 30px Arial,sans-serif;fill:#1f2937}
+.lang{font:700 28px Consolas,monospace;fill:#1f2937}
+.small{font:500 21px Arial,sans-serif;fill:#374151}
+.note{font:700 22px Arial,sans-serif}
+.cell{stroke:#1f2937;stroke-width:3;rx:18;ry:18}
+.blue{fill:#2563eb}.green{fill:#15803d}.orange{fill:#c2410c}.purple{fill:#6b21a8}
+</style>
+    <marker
+       id="ab"
+       markerWidth="14"
+       markerHeight="14"
+       refX="11"
+       refY="7"
+       orient="auto">
+      <path
+         d="M0,0 L14,7 L0,14 z"
+         fill="#2563eb"
+         id="path1" />
+    </marker>
+    <marker
+       id="ag"
+       markerWidth="14"
+       markerHeight="14"
+       refX="11"
+       refY="7"
+       orient="auto">
+      <path
+         d="M0,0 L14,7 L0,14 z"
+         fill="#15803d"
+         id="path2" />
+    </marker>
+  </defs>
+  <rect
+     width="1600"
+     height="1000"
+     fill="#fff"
+     id="rect2" />
+  <text
+     x="60"
+     y="80"
+     class="title"
+     id="text2">Servidor Web e programas externos</text>
+  <text
+     x="60"
+     y="125"
+     class="subtitle"
+     id="text3">O servidor pode acionar programas escritos em diferentes linguagens para processar uma requisição.</text>
+  <rect
+     x="500"
+     y="180"
+     width="600"
+     height="150"
+     class="cell"
+     fill="#d9f5df"
+     id="rect3" />
+  <text
+     x="800"
+     y="240"
+     class="label"
+     text-anchor="middle"
+     id="text4">Servidor Web</text>
+  <text
+     x="800"
+     y="285"
+     class="small"
+     text-anchor="middle"
+     id="text5">Recebe a requisição e escolhe o programa responsável</text>
+  <line
+     x1="800"
+     y1="330"
+     x2="800"
+     y2="430"
+     stroke="#2563eb"
+     stroke-width="6"
+     id="line5" />
+  <line
+     x1="310"
+     y1="430"
+     x2="1290"
+     y2="430"
+     stroke="#2563eb"
+     stroke-width="6"
+     id="line6" />
+  <line
+     x1="400"
+     y1="430"
+     x2="400"
+     y2="515"
+     stroke="#2563eb"
+     stroke-width="6"
+     marker-end="url(#ab)"
+     id="line7" />
+  <line
+     x1="800"
+     y1="430"
+     x2="800"
+     y2="515"
+     stroke="#2563eb"
+     stroke-width="6"
+     marker-end="url(#ab)"
+     id="line8" />
+  <line
+     x1="1200"
+     y1="430"
+     x2="1200"
+     y2="515"
+     stroke="#2563eb"
+     stroke-width="6"
+     marker-end="url(#ab)"
+     id="line9" />
+  <rect
+     x="245"
+     y="530"
+     width="310"
+     height="210"
+     class="cell"
+     fill="#dcecff"
+     id="rect9" />
+  <text
+     x="400"
+     y="585"
+     class="label"
+     text-anchor="middle"
+     id="text9">Programa</text>
+  <text
+     x="400"
+     y="645"
+     class="lang"
+     text-anchor="middle"
+     id="text10">C</text>
+  <text
+     x="400"
+     y="700"
+     class="small"
+     text-anchor="middle"
+     id="text11">Executável compilado</text>
+  <rect
+     x="645"
+     y="530"
+     width="310"
+     height="210"
+     class="cell"
+     fill="#eadcf7"
+     id="rect11" />
+  <text
+     x="800"
+     y="585"
+     class="label"
+     text-anchor="middle"
+     id="text12">Programa</text>
+  <text
+     x="800"
+     y="645"
+     class="lang"
+     text-anchor="middle"
+     id="text13">Perl</text>
+  <text
+     x="800"
+     y="700"
+     class="small"
+     text-anchor="middle"
+     id="text14">Script interpretado</text>
+  <rect
+     x="1045"
+     y="530"
+     width="310"
+     height="210"
+     class="cell"
+     fill="#ffe0c7"
+     id="rect14" />
+  <text
+     x="1200"
+     y="585"
+     class="label"
+     text-anchor="middle"
+     id="text15">Programa</text>
+  <text
+     x="1200"
+     y="645"
+     class="lang"
+     text-anchor="middle"
+     id="text16">Python</text>
+  <text
+     x="1200"
+     y="700"
+     class="small"
+     text-anchor="middle"
+     id="text17">Script interpretado</text>
+  <line
+     x1="400"
+     y1="740"
+     x2="400"
+     y2="825"
+     stroke="#15803d"
+     stroke-width="6"
+     id="line17" />
+  <line
+     x1="800"
+     y1="740"
+     x2="800"
+     y2="825"
+     stroke="#15803d"
+     stroke-width="6"
+     id="line18" />
+  <line
+     x1="1200"
+     y1="740"
+     x2="1200"
+     y2="825"
+     stroke="#15803d"
+     stroke-width="6"
+     id="line19" />
+  <line
+     x1="400"
+     y1="825"
+     x2="1200"
+     y2="825"
+     stroke="#15803d"
+     stroke-width="6"
+     id="line20" />
+  <line
+     x1="800"
+     y1="825"
+     x2="800"
+     y2="915"
+     stroke="#15803d"
+     stroke-width="6"
+     marker-end="url(#ag)"
+     id="line21" />
+  <text
+     x="800"
+     y="951"
+     class="note green"
+     text-anchor="middle"
+     id="text21"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:22px;line-height:normal;font-family:Arial, sans-serif">Saída processada</text>
+  <rect
+     x="90"
+     y="260"
+     width="300"
+     height="150"
+     class="cell"
+     fill="#f3f4f6"
+     id="rect21" />
+  <text
+     x="240"
+     y="315"
+     class="note purple"
+     text-anchor="middle"
+     id="text22">Mesmo papel</text>
+  <text
+     x="240"
+     y="355"
+     class="small"
+     text-anchor="middle"
+     id="text23">Linguagens diferentes podem</text>
+  <text
+     x="240"
+     y="390"
+     class="small"
+     text-anchor="middle"
+     id="text24">atender ao mesmo fluxo Web.</text>
+  <rect
+     x="1210"
+     y="260"
+     width="300"
+     height="150"
+     class="cell"
+     fill="#f3f4f6"
+     id="rect24" />
+  <text
+     x="1360"
+     y="315"
+     class="note blue"
+     text-anchor="middle"
+     id="text25">Integração</text>
+  <text
+     x="1360"
+     y="355"
+     class="small"
+     text-anchor="middle"
+     id="text26">O servidor encaminha dados</text>
+  <text
+     x="1360"
+     y="390"
+     class="small"
+     text-anchor="middle"
+     id="text27">e recebe a resposta gerada.</text>
+</svg>
